@@ -6,15 +6,15 @@ Lenskart is a leading e-commerce company that maintains an online optical store 
 <br/>
 ✨Collaboraters Names Are:-
 
-Jagriti Kumari- Team Lead
+1. Jagriti Kumari- Team Lead
 <br/>
-Prakash Chandra Jena
+2. Prakash Chandra Jena
 <br/>
-Safwan Faiz
+3. Safwan Faiz
 <br/>
-Shivam Gote
+4. Shivam Gote
 <br/>
-Rishi Raj
+5. Rishi Raj
 <br/>
 <br/>
 💻Unique Project Name :- Optic Kart
