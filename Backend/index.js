@@ -112,27 +112,17 @@ App.post("/post/cart", async (req, res) => {
 
 
 //get cartproducts 
-App.get("/cart", async (req, res) => {
-    try {
-        const data = await CartModel.find();
-        res.send(data);
-    } catch (error) {
-        console.log(error);
-        res.send(error);
-    }
-});
+// App.get("/cart", async (req, res) => {
+//     try {
+//         const data = await CartModel.find();
+//         res.send(data);
+//     } catch (error) {
+//         console.log(error);
+//         res.send(error);
+//     }
+// });
 
 //delete
-App.delete("/delete/:id", async (req, res) => {
-    const id = req.params.id;
-
-    try {
-        await CartModel.findByIdAndDelete({ _id: id });
-        res.send("data has been deleted successfully");
-    } catch (error) {
-        console.log(error);
-    }
-});
 
 
 //port
