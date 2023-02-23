@@ -123,16 +123,16 @@ App.post("/post/cart", async (req, res) => {
 // });
 
 //delete
-App.delete("/delete/:id", async (req, res) => {
-    const id = req.params.id;
+// App.delete("/delete/:id", async (req, res) => {
+//     const id = req.params.id;
 
-    try {
-        await CartModel.findByIdAndDelete({ _id: id });
-        res.send("data has been deleted successfully");
-    } catch (error) {
-        console.log(error);
-    }
-});
+//     try {
+//         await CartModel.findByIdAndDelete({ _id: id });
+//         res.send("data has been deleted successfully");
+//     } catch (error) {
+//         console.log(error);
+//     }
+// });
 
 
 //port
