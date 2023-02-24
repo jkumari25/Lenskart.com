@@ -124,7 +124,6 @@ App.use("/cart" ,CartRouter)
 //     }
 // });
 
-
 //get cartproducts 
 // App.get("/cart", async (req, res) => {
 //     try {
