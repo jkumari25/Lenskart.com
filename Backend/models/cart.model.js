@@ -1,20 +1,19 @@
 const mongoose = require("mongoose");
 
 const cartSchema = mongoose.Schema({
-    main_image: { type: String, required: true },
-    product_details_box: { type: Number, required: true },
-    rating_count: { type: Number, required: true },
-    product_details_box2: { type: String, required: true },
-    size_details: { type: String, required: true },
-    price_text: { type: String, required: true },
-    prev_price: { type: String, required: true },
-    color: { type: String, required: true },
-    offer_box: { type: String, required: true },
-    img1: { type: String, required: true },
-    img2: { type: String, required: true },
-    img3: { type: String, required: true },
-    img4: { type: String, required: true }
-});
+    product_image: { type: String, required: true },
+    rating_value: { type: String, required: true },
+    rating_count:  { type: String, required: true },
+    product_name : { type: String, required: true },
+    size: { type: String, required: true },
+    tags:{ type: String, required: true },
+    product_price: { type: Number, required: true },
+    strike_through: { type: String, required: true },
+    product_offer: { type: String, required: true },
+    category: { type: String, required: true },
+    id: { type: Number, required: true },
+    
+},{versionKey:false},);
 
 const CartModel = mongoose.model("cart", cartSchema);
 
