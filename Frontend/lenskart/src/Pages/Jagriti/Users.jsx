@@ -1,76 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import {
-  Box, 
-  Flex, 
-  Text, 
-  Icon,
-  IconButton,
-  Drawer,
-  Input,
-  InputLeftElement,
-  Avatar,
-  useDisclosure,
-  useColorModeValue,
-  InputGroup,
-  DrawerContent,
-  DrawerOverlay,
-  Heading,
-  Grid,
-  GridItem,
-  Card,
-  CardBody,
-  Image,
-  Stack,
-  Button,
-
-} from "@chakra-ui/react";
-
-import { FaBell } from 'react-icons/fa';
-import { FiSearch,FiMenu } from 'react-icons/fi';
+import { Box,Icon, Drawer,DrawerOverlay,DrawerContent,IconButton, Button, Card, CardBody, Flex, Grid, GridItem, Heading, Stack, useToast,Image,Text, useDisclosure, useColorModeValue } from '@chakra-ui/react'
+import axios from 'axios'
+import { FiMenu } from 'react-icons/fi';
 import { BsFillCartCheckFill } from 'react-icons/bs';
-import { AiFillEdit } from 'react-icons/ai';
 import { HiCollection} from 'react-icons/hi';
-import { MdDeleteSweep } from 'react-icons/md';
 import { MdHome } from 'react-icons/md';
-import { BsStarHalf } from 'react-icons/bs';
 import {HiOutlineViewGridAdd} from "react-icons/hi"
-import {FaUsers,FaUserPlus} from "react-icons/fa"
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProduct } from '../../Redux/AdminRedux/action';
-import AdminData from './AdminData';
-// import img from "./utils/logo.jpg";
+import {FaUsers} from "react-icons/fa"
+import { useEffect } from 'react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-const AdminSidebar = () => {
+const User = () => {
   const sidebar = useDisclosure();
   const color = useColorModeValue("grey.600", "grey.300");
 
-  const product= useSelector((store)=> store.adminReducer.product);
-  console.log(product);
-  const [data,setData]= useState("");
-  
-  const dispatch= useDispatch();
-
-  const handleDelete= (id) =>{
-    if (window.confirm('Do you want to remove?')) {
-      fetch('http://localhost:3004/product/' + id, {
-        method: 'DELETE',
-      })
-        .then((res) => {
-          alert('Removed successfully.')
-          window.location.reload()
-        })
-        .catch((err) => {
-          console.log(err.message)
-        })
+    const [data , setData] = useState([])
+    const toast = useToast()
+    useEffect(()=>{
+  getUser()
+    },[])
+    const getUser = async()=>{
+      const res = await axios.get("https://silly-tank-top-eel.cyclic.app/users")
+      setData(res.data)
     }
-  }
-
-  useEffect(()=>{
-  dispatch(getProduct())
-  },[]);
-
-  const NavItem = (props) => {
+    
+    const NavItem = (props) => {
     const { icon, children, ...rest } = props;
     return (
       <Flex
@@ -177,7 +131,7 @@ const AdminSidebar = () => {
     </Box>
     );
   return (
-    <Box>
+<Box>
       <Box
         as="section"
        
@@ -234,42 +188,58 @@ const AdminSidebar = () => {
               icon={<FiMenu />}
               size="sm"
             />
-          <InputGroup
-            w="96"
-            display={{
-              base: "none",
-              md: "flex",
-            }}
-            >
-         
-            <InputLeftElement color="gray.500">
-              <FiSearch />
-            </InputLeftElement>
-            <Input placeholder="Search for products..." />
-            </InputGroup>
+          <Heading   > Welcome Admin</Heading> 
+          </Flex>
 
-          <Flex align="center" >
-            <Icon color="gray.500" as={FaBell} cursor="pointer" />
-            <Avatar
-              ml="4"
-              size="sm"
-              name="anubra266"
-              src="https://avatars.githubusercontent.com/u/30869823?v=4"
-              cursor="pointer"
-            />
-          </Flex>
-          </Flex>
           <Box>
-          <AdminData />
-         </Box>
+      <Heading>Active Users</Heading>
+      <Box w="full" h="auto" bg="#BEE3F8">
+          <Grid
+              p="5"
+              mt="10"
+              gap={5}
+              templateColumns={[
+                "repeat(1, 1fr)",
+                "repeat(1, 1fr)",
+                "repeat(2, 1fr)",
+                "repeat(3, 1fr)",
+              ]}
+            >
+              {data.length > 0 &&
+                data.reverse().map((item) => (
+                  <GridItem key={item._id}>
+                     
+                    <Card maxW="sm">
+                      <CardBody>
+                        <Image
+                          src="https://cdn-icons-png.flaticon.com/512/21/21104.png"
+                          alt="Green double couch with wooden legs"
+                          borderRadius="lg"
+                        />
+                        <Stack mt="6" spacing="3">
+                          <Heading size="md"  cursor="pointer">User Name : {item.name} {item.last}</Heading>
+                          <Text color="black" cursor="pointer">Phone : {item.mobile}</Text>
+                          <Text color="black" cursor="pointer">email : {item.email}</Text>
+                        </Stack>
+                        
+                      </CardBody>
+                    </Card>
+                 
+               
+                                        
+
+
+                    
+                  </GridItem>
+                ))}
+            </Grid>
           </Box>
+    </Box>
         </Box>
       </Box>
+    </Box>
    
-  );
-};
+  )
+}
 
-
-export default AdminSidebar
-
-{/*  */}
+export default User
