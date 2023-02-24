@@ -2,8 +2,8 @@ import React from 'react';
 import {Routes,Route} from "react-router-dom";
 import AdminSidebar from "../Components/Jagriti/AdminSidebar"
 import AdminAddProduct from '../Pages/Jagriti/AdminAddProduct';
-import Checkout from '../Cart/Checkout';
-import CartItem from "../Cart/CartItem";
+import CartItem from "../Components/Cart/CartItem";
+import Checkout from '../Components/Checkout/Checkout';
 
 const AllRoutes = () => {
   return (
@@ -11,7 +11,7 @@ const AllRoutes = () => {
     <Route path="/admin" element={<AdminSidebar />} />
     <Route path="/addproduct" element={<AdminAddProduct />} />
     <Route path="/cart" element={<CartItem/>}/>
-    <Route path="/address" element={<Checkout/>}/>
+    <Route path="/checkout" element={<Checkout/>}/>
    </Routes>
   )
 }

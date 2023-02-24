@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Box, Center, Divider, Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { getData } from '../Redux/CartRedux/CartAction';
+import { getData } from '../../Redux/CartRedux/CartAction';
 import { CircularProgress } from "react-loading-indicators";
 import { FaAngleRight } from "react-icons/fa";
 import CartNull from "./CartNull";
@@ -31,7 +31,8 @@ const CartItem = () => {
   for (let i = 0; i < ProductData.length; i++) {
     total += +ProductData[i].product_price;
   }
-  let finalPrice = total + tax;
+  let discountPrice = total - 1000;
+  let finalPrice = discountPrice + tax;
 
   // console.log(ProductData,finalPrice);
   // console.log(loadingData);
@@ -90,7 +91,7 @@ const CartItem = () => {
               </Flex>{" "}
               <Flex justifyContent={"space-between"} w="300px" mt="5px">
                 <Text>Total After Discount</Text>
-                <Text>{total}</Text>
+                <Text>{discountPrice}</Text>
               </Flex>{" "}
               <Divider borderBottom={"1px dashed"} />
               <Flex justifyContent={"space-between"} w="300px" mt="5px">
