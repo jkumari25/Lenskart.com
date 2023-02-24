@@ -18,7 +18,7 @@ ProductRouter.post("/post", async (req, res) => {
 
 
 //get products data
-ProductRouter.get("/data", async (req, res) => {
+ProductRouter.get("/", async (req, res) => {
     try {
         const data = await ProductModel.find();
         res.send(data);

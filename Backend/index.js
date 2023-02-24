@@ -8,6 +8,7 @@ const { UserRouter } = require("./routes/user.routes");
 const { ProductRouter } = require("./routes/product.routes");
 const { CartRouter } = require("./routes/cart.routes");
 const { Auth } = require("./middleware/middlevare");
+const { OrderRouter } = require("./routes/order.routes");
 
 
 const App = express();
@@ -22,9 +23,12 @@ App.get("/", (req, res) => {
 
 
 App.use("/user",UserRouter)
-App.use (Auth)
 App.use("/product" , ProductRouter)
+App.use (Auth)
 App.use("/cart" ,CartRouter)
+App.use("/cart" ,OrderRouter)
+
+
 
 
 

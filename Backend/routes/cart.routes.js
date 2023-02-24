@@ -10,14 +10,14 @@ CartRouter.post("/post", async (req, res) => {
     try {
         await CartModel.insertMany(data);
 
-        res.send("data has been sent successfully");
+        res.send(" Cart data has been sent successfully");
     } catch (error) {
         res.send("error");
     }
 });
 
 
-// get cartproducts 
+// get cartCarts 
 CartRouter.get("/", async (req, res) => {
     try {
         const data = await CartModel.find();
@@ -33,22 +33,36 @@ CartRouter.delete("/delete/:id", async (req, res) => {
 
     try {
         await CartModel.findByIdAndDelete({ _id: id });
-        res.send("data has been deleted successfully");
+        res.send(" cart data has been deleted successfully");
     } catch (error) {
         console.log(error);
     }
 });
 
-// CartRouter.patch("/update/:id", async (req, res) => {
-//     const id = req.params.id;
+CartRouter.patch("/update/:id", async (req, res) => {
+    const id = req.params.id;
 
-//     try {
-//         await CartModel.findByIdAndUpdate({ _id: id });
-//         res.send("data has been update successfully");
-//     } catch (error) {
-//         console.log(error);
-//     }
-// });
+    try {
+        await CartModel.findByIdAndUpdate({ _id: id });
+        res.send(" cart data has been updated successfully");
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+
+CartRouter.patch("/update/:id", async (req, res) => {
+    const id = req.params.id;
+  
+    try {
+      await CartModel.findByIdAndUpdate({ _id: id }, req.body);
+      res.send("user data updated successfully");
+    } catch (error) {
+      res.send({ msg: "something went wrong", error: error.message });
+    }
+  });
+
+
 
 
 module.exports = {CartRouter };
