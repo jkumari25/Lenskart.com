@@ -110,7 +110,6 @@ App.post("/post/cart", async (req, res) => {
     }
 });
 
-
 //get cartproducts 
 // App.get("/cart", async (req, res) => {
 //     try {
