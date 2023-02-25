@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import {Text,Image,Box, HStack,Link,Avatar, Heading, Flex, Center} from '@chakra-ui/react';
+import {Text,Image,Box, HStack,Link,Avatar, Heading, Flex,} from '@chakra-ui/react';
 import Styles from './TopNav.module.css'
 import Hover from './Hover'
 // import Login from '../Login'
@@ -13,7 +13,7 @@ import {
  
 } from '@chakra-ui/react'
 
-import {Navigate} from "react-router-dom"
+// import {Navigate} from "react-router-dom"
 import {TriangleDownIcon} from "@chakra-ui/icons";
 
 import {
@@ -31,13 +31,13 @@ import {
     
   } from '@chakra-ui/react'
   import { FiMenu } from "react-icons/fi";
-  import { AiOutlinePlus,AiOutlineMinus } from "react-icons/ai";
+ 
 import { AuthContext } from '../../ContextApi/AuthContext';
 const TopNav = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const firstField = React.useRef()
   
-    const {isAuth,setisAuth,Authdata,setAuthdata}=useContext(AuthContext)
+    const {isAuth,Authdata}=useContext(AuthContext)
 
 
 
@@ -99,16 +99,8 @@ const TopNav = () => {
                
               
                 <PopoverBody display={"flex"} flexDirection="column" h={"160px"} justifyContent="space-between" >
-                <Link  to="" color="#333368" >My orders</Link>
-                <Link  color="#333368" >My Prescription</Link>
-                <Link color="#333368" >My Store credit</Link>
-                <Link  to="/customer/account" color="#333368" >Account information</Link>
-                <Box color="#333368" onClick={()=>{ 
-                  setisAuth(false)
-                  setAuthdata('')
-                   return <Navigate to="/"/>
-
-                }} >Logout</Box>
+               
+                
             </PopoverBody>
               </PopoverContent>
             </Popover>
@@ -119,7 +111,7 @@ const TopNav = () => {
                 </Box>
                 }
                 <Link to="/login" fontWeight={"400"} fontSize="13px">Sign In</Link>
-                <Link  fontWeight={"400"} fontSize="13px">Sign Up</Link>
+                <Link to="/signup"  fontWeight={"400"} fontSize="13px">Sign Up</Link>
             </Flex>
                             </Box>
                             <Box display="flex" cursor="pointer">

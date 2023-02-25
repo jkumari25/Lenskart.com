@@ -1,0 +1,132 @@
+.Contact_Lens_Main_Section{
+    /* border: 1px solid black; */
+    height: 600px;
+}
+
+.Order_Contact_Lens_Main_div{
+    /* border: 1px solid black; */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: #8a8a8a;
+    color: #ffffff;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    padding: 1px 0 2px 0;
+    text-align: center;
+}
+
+.Order_Contact_Lens_Main_div span{
+    color: #ffd086;
+    font-weight: bold;
+}
+
+.Contact_Lens_Img_section_Sec_Div{
+    /* border: 1px solid black; */
+    height: 280px;
+    margin-bottom: 1px;
+}
+
+.Contact_Lens_Img_section_Sec_Div>img{
+    height: 280px;
+    width: 100%;
+}
+
+
+.Contact_Lens_Four_Section_MainDiv{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    /* height: auto; */
+    padding: 10px 20px;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.DisPosability_Section_Main_div_DisPosability{
+    width: 100%;
+    list-style: none;
+    border: 1px solid #cccccc;
+    text-align: center;
+    margin-bottom: 200px;
+    height: 579px;
+    /* border: 2px solid black; */
+}
+
+.DisPosability_Section_Main_div_Brands{
+    width: 100%;
+    height: 990px;
+    list-style: none;
+    border: 1px solid #cccccc;
+    text-align: center;
+    /* border: 1px solid black; */
+    /* margin-bottom: 200px; */
+}
+
+.DisPosability_Section_Main_div_Power{
+    width: 100%;
+    list-style: none;
+    border: 1px solid #cccccc;
+    text-align: center;
+    height: 695px;
+    /* border: 1px solid black; */
+    /* margin-bottom: 2000px; */
+}
+
+.DisPosability_Section_Main_div_Color{
+    width: 100%;
+    height: 695px;
+    list-style: none;
+    border: 1px solid #cccccc;
+    text-align: center;
+    /* border: 1px solid black; */
+    /* margin-bottom: 200px; */
+}
+
+.Contact_Lens_Four_section_Heading{
+    /* border: 1px solid black; */
+    background: #f0f0f0;
+    padding-top: 4%;
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+.Contact_Lens_Four_section_Heading>h1{
+    color: #2b9087;
+    margin: 0;
+    padding: 5px;
+}
+
+.Four_section_inside_Imf_Name_Icon_Section{
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    justify-content: space-evenly;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 5px;
+
+}
+
+.Four_section_inside_Imf_Name_Icon_Section:hover{
+    /* border: 1px solid black; */
+    cursor: pointer;
+    /* border: 1px solid rgb(184, 184, 184); */
+    transform: scale(0.9);
+}
+
+.Four_section_inside_Imf_Name_Icon_Section p{
+    font-size: 19.5px;
+    font-weight: bold;
+    color: #727272;
+    margin: 0;
+    padding: 0;
+    font-family: futurastd-medium;
+    font-weight: 400!important;
+    /* border: 1px solid black; */
+}
+
+
+
+
+
+/* 45 */

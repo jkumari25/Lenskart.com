@@ -5,6 +5,7 @@ import{ reducer as CartReducer} from "./CartRedux/CartReducer";
 
 const rootReducer= combineReducers({adminReducer,CartReducer});
 
+
 const composeEnhancers= window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store= legacy_createStore(rootReducer,composeEnhancers(applyMiddleware(thunk)));
