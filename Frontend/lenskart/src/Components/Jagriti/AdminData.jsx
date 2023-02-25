@@ -1,45 +1,57 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Button, Card, CardBody, Flex, Grid, GridItem, Heading, Image, Stack, Text } from '@chakra-ui/react';
-import {useDispatch, useSelector} from "react-redux";
-import {getProduct} from "../../Redux/AdminRedux/action";
-import {store} from "../../Redux/store";
+import { Box, Button, Card, CardBody, Flex, Grid, GridItem, Heading, Image, Stack, Text,useToast } from '@chakra-ui/react';
+// import {useDispatch, useSelector} from "react-redux";
+// import {getProduct} from "../../Redux/AdminRedux/action";
+// import {store} from "../../Redux/store";
 import { BsStarHalf } from 'react-icons/bs';
 import { AiFillEdit} from 'react-icons/ai';
 import { MdDeleteSweep } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const AdminData = () => {
-  const product= useSelector((store)=> store.adminReducer.product);
-  console.log(product);
-  const [data,setData]= useState("");
+  //const product= useSelector((store)=> store.adminReducer.product);
+  //console.log(product);
+  const [product,setProduct]= useState([]);
+  const toast = useToast()
   
-  const dispatch= useDispatch();
+ // const dispatch= useDispatch();
 
-  const handleDelete= (_id) =>{
-    if (window.confirm('Do you want to remove?')) {
-      fetch('https://silly-tank-top-eel.cyclic.app/product/' + _id, {
-        method: 'DELETE',
-      })
-        .then((res) => {
-          alert('Removed successfully.')
-          window.location.reload()
-        })
-        .catch((err) => {
-          console.log(err.message)
-        })
+ useEffect(()=>{
+  getProduct()
+    },[])
+    const getProduct = async()=>{
+      const res = await axios.get("https://silly-tank-top-eel.cyclic.app/product")
+      setProduct(res.data)
     }
-  }
 
-  useEffect(()=>{
-  dispatch(getProduct())
-  },[]);
+  // useEffect(()=>{
+  //   dispatch(getProduct())
+  //   },[]);
+  
 
+  const handleDelete= async(id) =>{
+    if(window.confirm("Are you sure that you wanted to delete that Product")){
+     const res = await axios.delete(`https://silly-tank-top-eel.cyclic.app/product/delete/${id}`)
+     
+       toast({
+         position: "bottom-left",
+         title: "Product deleted SuccessFully ",
+         description: "SuccessFul.",
+         status: "success",
+         duration: 4000,
+         isClosable: true,
+       });
+      getProduct()
+    }
+   }
+ 
   // width={["60%", "70%", "80%", "90%"]}
 
   return (
    <Box w="90%" h="auto" m="auto">
-      <Text style={{fontSize:"20px",fontWeight:"bold",color:"teal", fontFamily:"sans-serif"}}>
-       All The Products Present Here
+      <Text style={{fontSize:"40px",fontWeight:"bold",color:"black", fontFamily:"sans-serif"}}>
+       Welcome to Admin Dashboard
       </Text>
     <Grid
       mt="10"

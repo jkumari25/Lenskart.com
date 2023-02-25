@@ -9,18 +9,21 @@ import {FaUsers} from "react-icons/fa"
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import img from "../../Components/Jagriti/utils/User.logo.jpg";
+ 
 const User = () => {
   const sidebar = useDisclosure();
   const color = useColorModeValue("grey.600", "grey.300");
 
     const [data , setData] = useState([])
     const toast = useToast()
+    
     useEffect(()=>{
-  getUser()
+     getUser()
     },[])
+
     const getUser = async()=>{
-      const res = await axios.get("https://silly-tank-top-eel.cyclic.app/users")
+      const res = await axios.get("https://silly-tank-top-eel.cyclic.app/user")
       setData(res.data)
     }
     
@@ -212,24 +215,17 @@ const User = () => {
                     <Card maxW="sm">
                       <CardBody>
                         <Image
-                          src="https://cdn-icons-png.flaticon.com/512/21/21104.png"
+                          src={img}
                           alt="Green double couch with wooden legs"
                           borderRadius="lg"
                         />
                         <Stack mt="6" spacing="3">
                           <Heading size="md"  cursor="pointer">User Name : {item.name} {item.last}</Heading>
-                          <Text color="black" cursor="pointer">Phone : {item.mobile}</Text>
                           <Text color="black" cursor="pointer">email : {item.email}</Text>
                         </Stack>
                         
                       </CardBody>
                     </Card>
-                 
-               
-                                        
-
-
-                    
                   </GridItem>
                 ))}
             </Grid>

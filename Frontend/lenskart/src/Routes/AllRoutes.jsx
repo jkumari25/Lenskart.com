@@ -8,11 +8,12 @@ import User from '../Pages/Jagriti/Users';
 import CartItem from "../Components/Cart/CartItem";
 import Checkout from '../Components/Checkout/Checkout';
 import Form from '../Components/Checkout/Address';
-
+import Home from '../Home'
 
 const AllRoutes = () => {
   return (
    <Routes>
+    <Route path="/" element={<Home/>}/>
     <Route path="/admin" element={<AdminSidebar />} />
     <Route path="/addproduct" element={<AdminAddProduct />} />
     <Route path="/product/:id" element={<AdminEditData />} />

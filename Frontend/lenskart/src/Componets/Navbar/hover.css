@@ -1,0 +1,656 @@
+.MainMenu{
+    height: 60%;
+    position: sticky; 
+    z-index: 10;
+    top: 0;  
+    background-color:#FBF9F7; 
+    padding-top: 0.5%; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /* background-color: aqua; */
+}
+.MainMenu ul{
+    color: #000042;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 120%;
+    justify-content: space-evenly;
+    margin: auto; 
+    margin-left: 40PX;
+    font-weight:540;    
+}
+.MainMenu ul li{
+    margin: 0px 8px;
+    padding-bottom: 15px;
+    font-size: 90%;
+    cursor: pointer;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.MainMenu>ul>li:hover{
+    color: black;
+    padding-bottom: 13px;
+    border-bottom: solid 2px black;
+}
+.SubMenu_1{
+   display: none;  
+}
+.SubMenu_2{
+    height: 20%;
+    width:100%;
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+    padding-top: 20px;
+    padding-left: 265px;
+    padding-right: 10%;
+    font-weight: lighter;
+    justify-content: space-between;
+    /* background-color: red; */
+ }
+ .SubMenu_3{
+    height: 100%;
+    margin: auto;  
+    /* width:90%; */
+    /* background-color: aqua; */
+ }
+.MainMenu>ul>li:hover .SubMenu_1{
+   display: block;
+   position:absolute;
+   top:25px;
+   width:150%;
+   height:300px;margin-top: 16px;
+   /* background-color: aqua;   */
+}
+.Men_menu{
+    margin-top: 32px;
+    margin-left: 18px;
+}
+.Women_menu{
+    margin-top: -120px;
+    margin-left: 18px;
+}
+.Kids_menu{
+    margin-top: -90px;
+    margin-left: 18px;
+}
+.Greater_icon_men{
+    margin-top: 35px;
+    margin-left: 82px;
+}
+.Greater_icon_women{
+    margin-top: -115px;
+    margin-left: 62px;
+}
+.Greater_icon_kids{
+    margin-top: -90px;
+    margin-left: 80px;
+}
+.Heading_1{
+    margin-top: 25px;
+    margin-left: 30px;
+    font-size: medium;
+}
+.Heading_1 >p> span{
+    font-weight: bold;
+}
+.Heading_2{
+    margin-top: -130px;
+    margin-left: 30px;
+    font-size: medium;
+}
+.Heading_2 >p> span{
+    font-weight: bold;
+}
+.Heading_3{
+    margin-top: -100px;
+    margin-left: 30px;
+    font-size: medium;
+}
+.Heading_3 >p> span{
+    font-weight: bold;
+}
+.Greater_icon_men_2{
+    margin-top: 37px;
+    margin-left: 40px;
+}
+.via{
+    margin-top: 42px;
+    margin-left: 40px;
+}
+.Greater_icon_women_2{
+    margin-top: -120px;
+    margin-left: -5px;
+}
+.Greater_icon_kids_2{
+    margin-top: -95px;
+    margin-left: 25px;
+}
+.nextPara_1{
+    color: #CCCCCC;
+    margin-top: 10px;
+    margin-left: 65px;
+    font-size:small;
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+}
+.nextPara_1 > div:hover{
+    color: #000042;
+}
+.nextPara_2{
+    color: #CCCCCC;
+    margin-top: -225px;
+    margin-left: 305px;
+    font-size:small;
+    display: flex;
+    flex-direction: column;
+    /* background-color: green; */
+}
+.nextPara_2 > div:hover{
+    color: #000042;
+}
+.nextPara_3{
+    color: #CCCCCC;
+    margin-top: -16.3%;
+    margin-left: 31%;
+    font-size:small;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #000042; */
+}
+.nextPara_3 > div:hover{
+    color: #000042;
+}
+.nextPara_4{
+    color: #CCCCCC;
+    margin-top: -16.3%;
+    margin-left: 4%;
+    font-size:small;
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellowgreen; */
+}
+.nextPara_4 > div:hover{
+    color: #000042;
+}
+.subPara_1{
+    margin-top: 10px;
+}
+.subPara_2{
+    margin-top: 10px;
+}
+.subPara_3{
+    margin-top: 10px;
+}
+.subPara_4{
+    margin-top: 10px;
+}
+.submenu_3{
+    display: none;
+}
+/* 2nd List */
+.Computer_WomenMenu{
+    margin-top: 35px;
+    margin-left: 18px;
+}
+.Computer_Greater_icon_women{
+    margin-top: 35px;
+    margin-left: 60px;
+}
+.Computer_Heading_2{
+    margin-top: 25px;
+    margin-left: 30px;
+    font-size: medium;
+}
+.Computer_Heading_2 >p> span{
+    font-weight: bold;
+}
+.Computer_Greater_icon_women_2{
+    margin-top: 30px;
+    margin-left: 20px
+}
+.Computer_KidsMenu{
+    margin-top: 25px;
+    margin-left: 18px;
+}
+.kids_Section{
+    display: flex;
+}
+.Computer_Greater_icon_kids{
+    margin-top: 25px;
+    margin-left: 80px;
+}
+.image_1{
+    background-color:#FBF9F7; 
+    height: 250px;
+    width: 240px;
+}
+.image_1>div{
+    color: #CCCCCC;
+    margin-top: 10px;
+    text-align: center;
+    font-size: medium;
+}
+.img_1{
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    padding-top: 30px;
+    text-align: center;
+}
+.image_2{
+    background-color:#FBF9F7; 
+    height: 250px;
+    width: 240px;
+    margin-left: 85px;
+}
+.image_2>div{
+    color: #CCCCCC;
+    margin-top: 10px;
+    text-align: center;
+    font-size: medium;
+}
+.img_2{
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    padding-top: 30px;
+    text-align: center;
+}
+.image_3{
+    background-color:#FBF9F7; 
+    height: 250px;
+    width: 240px;
+    margin-left: 85px;
+}
+.image_3>div{
+    color: #CCCCCC;
+    margin-top: 10px;
+    text-align: center;
+    font-size: medium;
+}
+.img_3{
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    padding-top: 30px;
+    text-align: center;
+}
+.contactGlasses_SubMenu_1{
+    display: none;
+}
+.contactGlasses_SubMenu_2{
+    height: 60px;
+    width:100%;
+    margin: auto;
+    /* margin-top: 10px; */
+    /* margin-left: -20%; */
+    display: flex;
+    padding-top: 22px;
+    padding-left: 30px;
+    padding-right: 2%;
+    justify-content: space-around;
+    font-weight: lighter;
+    /* padding-right: 40px; */
+    /* background-color: red; */
+}
+.MainMenu>ul>li:hover .contactGlasses_SubMenu_1{
+    display: block;
+    position:absolute;
+    top:40px;
+    width:150%;
+    /* height:300px; */
+    margin-top: 16px;
+    margin-left: -420px;
+    /* background-color: aqua;   */
+ }
+ .contactGlasses_SubMenu_3{
+     height: 80%;
+     margin: auto;  
+     /* width:90%; */
+     /* margin-left: -420px; */
+     /* background-color: yellowgreen; */
+ }
+ .contactGlasses_nextPara_1{
+    color: #CCCCCC;
+    margin-top: 10px;
+    margin-left: 4.5%;
+    font-size:small;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #000042; */
+}
+.contactGlasses_subPara_1{
+    margin-top: 10px;
+}
+.contactGlasses_nextPara_1>div:hover{
+    color: #000042;
+}
+.contactGlasses_nextPara_2{
+    color: #CCCCCC;
+    margin-top: -16%;
+    margin-left: 19%;
+    font-size:small;
+    display: flex;
+    flex-direction: column;
+    /* background-color: pink; */
+}
+.contactGlasses_subPara_2{
+    margin-top: 10px;
+}
+.contactGlasses_nextPara_2>div:hover{
+    color: #000042;
+}
+.contactGlasses_nextPara_3{
+    color: #CCCCCC;
+    margin-top: -25.8%;
+    margin-left: 37%;
+    font-size:small;
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellowgreen; */
+}
+.contactGlasses_subPara_3{
+    margin-top: 10px;
+}
+.contactGlasses_nextPara_3>div:hover{
+    color: #000042;
+}
+.contactGlasses_nextPara_4{
+    color: #CCCCCC;
+    margin-top: -36.6%;
+    margin-left: 55%;
+    font-size:small;
+    display: flex;
+    flex-direction: column;
+    /* background-color: violet; */
+}
+.contactGlasses_subPara_4{
+    margin-top: 10px;
+}
+.contactGlasses_nextPara_4>div:hover{
+    color: #000042;
+}
+.contactGlasses_nextPara_5{
+    color: #CCCCCC;
+    margin-top: -45.2%;
+    margin-left: 72%;
+    font-size:small;
+    display: flex;
+    flex-direction: column;
+    /* background-color: tomato; */
+}
+.contactGlasses_subPara_5{
+    margin-top: 10px;
+}
+.contactGlasses_nextPara_5>div:hover{
+    color: #000042;
+}
+.hr_Line{
+    border-bottom: 2px solid #CCCCCC;
+    height: 5px;
+    width: 85%;
+    margin-left: 18.5%;
+}
+.hr_Line2   {
+    border-bottom: 2px solid #CCCCCC;
+    height: 5px;
+    width: 80%;
+    margin-left: 17%;
+}
+.hr_Line3{
+    border-bottom: 2px solid #CCCCCC;
+    height: 5px;
+    /* width: 105%; */
+    /* margin-left: -30%; */
+}
+.hr_Line4{
+    border-bottom: 2px solid #CCCCCC;
+    height: 5px;
+    width: 83%;
+    margin-left: -20%;
+}
+
+.sunGlasses_SubMenu_1{
+    display: none;  
+ }
+ .sunGlasses_SubMenu_2{
+     height: 15%;
+     width:100%;
+     margin: auto;
+     display: flex;
+     margin-top: 15px;
+     margin-left: -550px;
+     padding-top: 12px;
+     padding-left: 265px;
+     padding-right: 40px;
+     font-weight: lighter;
+     justify-content: space-between;
+     /* background-color: red; */
+  }
+  .sunGlasses_SubMenu_3{
+     height: 80%;
+     width:100%;
+     margin: auto; 
+     margin-left: -550px; 
+     /* background-color: pink; */
+  }
+ .MainMenu>ul>li:hover .sunGlasses_SubMenu_1{
+    display: block;
+    position:absolute;
+    top:40px;
+    width:150%;
+    height:300px;
+    margin-top: 16px;
+    /* margin-left: -500px; */
+    /* background-color: aqua;   */
+ }
+ .sunGlasses_Men_menu{
+     margin-top: 32px;
+     margin-left: 18px;
+ }
+ .sunGlasses_Women_menu{
+     margin-top: -35px;
+     margin-left: 18px;
+ }
+ .sunGlasses_Greater_icon_men{
+     margin-top: 35px;
+     margin-left: 82px;
+ }
+ .sunGlasses_Greater_icon_women{
+     margin-top: -30px;
+     margin-left: 62px;
+ }
+ .sunGlasses_Heading_1{
+     margin-top: 25px;
+     margin-left: 30px;
+     font-size: medium;
+ }
+ .sunGlasses_Heading_1 >p> span{
+     font-weight: bold;
+ }
+ .sunGlasses_Heading_2{
+     margin-top: -40px;
+     margin-left: 30px;
+     font-size: medium;
+ }
+ .sunGlasses_Heading_2 >p> span{
+     font-weight: bold;
+ }
+ .sunGlasses_Greater_icon_men_2{
+     margin-top: 37px;
+     margin-left: 40px;
+ }
+ .sunGlasses_via{
+     margin-top: 42px;
+     margin-left: 40px;
+ }
+ .sunGlasses_Greater_icon_women_2{
+     margin-top: -30px;
+     margin-left: -5px;
+ }
+ .sunGlasses_nextPara_1{
+     color: #CCCCCC;
+     margin-top: 0.5%;
+     margin-left: 4%;
+     font-size:small;
+     display: flex;
+     flex-direction: column;
+     /* background-color: #000042; */
+ }
+ .sunGlasses_nextPara_1>div:hover{
+    color: #000042;
+ }
+ .sunGlasses_nextPara_2{
+     color: #CCCCCC;
+     margin-top:-10.5%;
+     margin-left: 17.2%;
+     font-size:small;
+     display: flex;
+     flex-direction: column;
+     /* background-color: yellowgreen; */
+ }
+ .sunGlasses_nextPara_2>div:hover{
+    color: #000042;
+ }
+ .sunGlasses_nextPara_3{
+     color: #CCCCCC;
+     margin-top: -10.5%;
+     margin-left: 7.5%;
+     font-size:small;
+     display: flex;
+     flex-direction: column;
+     /* background-color: tomato; */
+ }
+ .sunGlasses_nextPara_3>div:hover{
+    color: #000042;
+ }
+ .sunGlasses_nextPara_4{
+     color: #CCCCCC;
+     margin-top: -10.5%;
+     margin-left: 5.5%;
+     font-size:small;
+     display: flex;
+     flex-direction: column;
+     /* background-color: aqua; */
+ }
+ .sunGlasses_nextPara_4>div:hover{
+    color: #000042;
+ }
+ .sunGlasses_subPara_1{
+     margin-top: 10px;
+ }
+ .sunGlasses_subPara_2{
+     margin-top: 10px;
+ }
+ .sunGlasses_subPara_3{
+     margin-top: 10px;
+ }
+ .sunGlasses_subPara_4{
+     margin-top: 10px;
+ }
+ .eyeText_mainMenu{
+    display: none;  
+ }
+ .MainMenu>ul>li:hover .eyeText_mainMenu{
+    display: block;
+    position:absolute;
+    top:50px;
+    width:153%;
+    height:418px;
+    margin-left: -70%;
+    /* background-color: aqua;   */
+ }
+ .eyeText_mainMenu_1{
+    display: flex;
+    height: 100%;
+    width:100%;
+    /* flex-direction: row; */
+    /* background-color: pink; */
+ }
+ .eyeText_SubMenu_1{
+     height: 100%;
+     width:85%;
+     /* background-color: red; */
+  }
+  .eyeText_SubMenu_2{
+     height: 100%;
+     width:100%;
+     /* background-color: pink; */
+  }
+.eyeText_SubMenu_2 > button{
+    text-align: center;
+    display: grid;
+    margin: auto;
+    width: 25%;
+    color: #000042;
+    margin-top: 5%;
+    padding-top: 1.4%;
+    padding-bottom: 1.4%;
+    font-size:large;
+    border-radius:22px;
+    border:1px solid #000042;
+}
+.eyeText_SubMenu_2 > button:hover{
+    color: #FFFFFF;
+    background-color: #000042;
+}
+.store_mainMenu{
+    display: none;  
+ }
+ .MainMenu>ul>li:hover .store_mainMenu{
+    display: block;
+    position:absolute;
+    top:50px;
+    width:153%;
+    height:418px;
+    margin-left: -84.5%;
+    /* background-color: aqua;   */
+ }
+ .store_mainMenu_1{
+     display: flex;   
+     width:100%;
+    height: 100%;
+    /* background-color: pink; */
+}
+.store_SubMenu_1{
+    height: 100%;
+    width:85%;
+     /* background-color: pink; */
+  }
+  .store_SubMenu_2{
+    height: 100%;
+    width:100%;
+    /* background-color:violet; */
+}
+  .store_SubMenu_1 > button{
+    text-align: center;
+    display: grid;
+    margin: auto;
+    width: 25%;
+    color: #000042;
+    margin-top: 5%;
+    padding-top: 1.4%;
+    padding-bottom: 1.4%;
+    font-size:large;
+    border-radius:22px;
+    border:1px solid #000042;
+}
+.store_SubMenu_1 > button:hover{
+    color: #FFFFFF;
+    background-color: #000042;
+}
+ @media screen and (max-width:1040px) {
+    .MainMenu{
+        display:none;
+        
+    } 
+}
+
+.SubMenu_1,.contactGlasses_SubMenu_1{
+
+
+    background-color: white !important;
+} 
