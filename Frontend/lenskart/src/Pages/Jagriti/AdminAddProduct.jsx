@@ -1,11 +1,11 @@
-import { Box, Button, Center, Flex, FormLabel, Heading, Image, Input, TagLabel, Text, useToast } from '@chakra-ui/react'
-import axios from 'axios'
+import { Box, Button, Center, Flex, FormLabel, Heading, Image, Input, Text, useToast } from '@chakra-ui/react'
+// import axios from 'axios'
 import React, { useState } from 'react'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+// import { useEffect } from 'react'
+// import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { addProductData, getProduct } from '../../Redux/AdminRedux/action'
-import { store } from '../../Redux/store'
+// import { addProductData, getProduct } from '../../Redux/AdminRedux/action'
+// import { store } from '../../Redux/store'
 
 const AdminAddProduct = () => {
   const [product_name,setProductName]= useState("");
