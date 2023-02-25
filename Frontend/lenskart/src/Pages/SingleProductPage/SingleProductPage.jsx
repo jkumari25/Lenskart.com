@@ -3,7 +3,7 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
 import { useParams } from "react-router-dom"
 import style from "./SingleProductPage.module.css"
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import {  Button,  } from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react'
 
 const SingleProductPage = () => {
@@ -12,7 +12,8 @@ const SingleProductPage = () => {
 
   const { id } = useParams()
 
-  const product = useSelector((store) => store.product)
+  const product = useSelector((store) => store.ProductReducer.product)
+  const isLoading = useSelector((store) => store.ProductReducer.isLoading)
   const [data, setData] = useState({})
 
   useEffect(() => {
@@ -20,9 +21,7 @@ const SingleProductPage = () => {
     lensData && setData(lensData)
   }, [])
 
-console.log(data)
-
-
+// console.log(data+"Single")
   return (
     <>
 
