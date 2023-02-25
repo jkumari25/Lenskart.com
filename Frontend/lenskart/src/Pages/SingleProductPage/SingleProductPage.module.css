@@ -1,0 +1,139 @@
+.Single_Product_Page_Main_Container {
+    border: 1px solid rgb(228, 228, 228);
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    width: 85%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    height: auto;
+    padding: 40px;
+
+}
+
+.Single_Product_Page_Main_Container>div:nth-child(1) {
+    /* border: 1px solid black; */
+    align-items: center;
+    width: 55%;
+    margin: auto;
+}
+
+.Single_Product_Page_Img_Main_div>img {
+    /* border: 1px solid teal; */
+    width: 100%;
+}
+
+.Single_Product_Page_Img_Main_div>img:hover {
+    /* border: 1px solid teal; */
+    -webkit-transform: scaleX(-0.5);
+    transform: scaleX(-1);
+    cursor: pointer;
+}
+
+
+
+.Single_Product_Page_Main_Container>div:nth-child(2) {
+    /* border: 1px solid teal; */
+    width: 45%;
+    /* padding-top: 50px; */
+}
+
+.Single_Product_Page_Tag_Name {
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Single_Product_Page_Tag_Name>h1 {
+    /* border: 1px solid black; */
+    color: #548cb6;
+    font-family: Rajdhani, sans-serif;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+.Single_Product_Page_Product_Name {
+    color: #269aff;
+    font-family: Rajdhani, sans-serif;
+    font-size: 1.3em;
+    font-weight: bolder;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.Single_Product_Page_Product_Size {
+    color: grey;
+    font-family: Rajdhani, sans-serif;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+.Single_Product_Page_Strike_Through {
+    color: #548cb6;
+    font-family: Rajdhani, sans-serif;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    /* margin-bottom: px; */
+    font-size: 18px;
+}
+
+.Single_Product_Page_Price_Product {
+    color: #025fa7;
+    font-family: Rajdhani, sans-serif;
+    font-size: 21px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+
+.Single_Product_Page_Product_Frame_Lens {
+    display: inline-flex;
+    gap: 5px;
+    margin-left: -3px;
+    color: #8a8a8a;
+    background-color: #dfdfdf;
+    border-radius: 15px;
+    padding: 7px 12px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: 1px solid rgb(209, 209, 209);
+}
+
+.Single_Product_Page_Add_To_cart_Button_Main_Section {
+    display: flex;
+    /* border: 1px solid black; */
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.Single_Product_Page_Add_To_cart_Button_Main_Section>button {
+    /* border: 1px solid rgb(153, 153, 153); */
+    padding: 24px;
+    border-radius: 15px;
+}
+
+
+.Single_Product_Page_Add_To_cart_Button_Main_Section:hover {
+    cursor: pointer;
+}
+
+
+.Product_card_Suited_years_Img_section {
+    /* border: 1px solid black; */
+    display: flex;
+    gap: 5px;
+    width: 20%;
+
+}
+
+
+.Product_card_Suited_years_Img_section>img {
+    width: 20%;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
