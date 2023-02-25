@@ -1,0 +1,105 @@
+/* .Product_List_Main_Container_Shivam{
+    /* border: 0px solid red; */
+
+
+    .All_Kids_EyeGlass_Main_Section {
+        /* border: 1px solid black; */
+        display: flex;
+        align-items: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 15px;
+        background-color: #e9e9e9;
+        justify-content: space-evenly;
+    }
+    
+    
+    
+    .All_Kids_Section_Inside_H_One_tag {
+        font-size: 12px;
+        font-family: futurastd-medium, sans-serif;
+        color: #6d6e71;
+        padding: 0 3%;
+        margin: 0;
+        line-height: 20px;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: left;
+    }
+    
+    .All_Kids_Section_Inside_View_Frames_And_button_Section {
+        /* border: 1px solid black; */
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .All_Kids_Section_Inside_View_Frames_And_button_Section>h2 {
+        /* border: 1px solid black; */
+        cursor: pointer;
+        letter-spacing: 1.3px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #329c92;
+        font-family: futurastd-heavy;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+    .All_Kids_Section_Inside_View_Frames_And_button_Section>p {
+        /* border: 1px solid black; */
+        font-size: 14px;
+        cursor: pointer;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-display: swap; 
+        -moz-box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        line-height: 1.4;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+    
+    .All_Kids_Section_Inside_Sort_Section{
+        /* border: 1px solid black; */
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .All_Kids_Section_Inside_Sort_Section>h1{
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #33b7aa;
+        font-family: futurastd-heavy;
+        line-height: 30px;
+        margin-left: -10px;
+    }
+    
+    .All_Kids_Section_Inside_Sort_Section>select{
+        color: #989999;
+    }
+    
+    
+    
+    /* Product List */
+    
+    .Product_Cart_Main_section_In_Product_List_File{
+        /* border: 1px solid black; */
+        padding: 30px;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 30px;
+        align-items: center;
+        justify-content: space-evenly;
+    }

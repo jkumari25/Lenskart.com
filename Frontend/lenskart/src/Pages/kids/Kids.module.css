@@ -1,0 +1,30 @@
+.Kids_Main_Div {
+    /* border: 1px solid black; */
+    width: 99%;
+    margin: auto;
+    margin-top: 20px;
+    height: auto;
+    padding: 10px;
+    /* background-color: white; */
+    /* color: black; */
+}
+
+.Kids_SideBar_Product_Main_Container {
+    /* border: 1px solid black; */
+    /* margin-top: 5px; */
+    display: flex;
+    gap: 0px;
+    height: auto;
+    /* padding-top: 10px; */
+}
+
+.Kids_SideBar_Product_Main_Container>div:nth-child(1) {
+    /* border: 2px solid red;   */
+    width: 20.5%;
+}
+
+
+.Kids_SideBar_Product_Main_Container>div:nth-child(2) {
+    /* border: 2px solid teal;   */
+    width: 79.5%;
+}

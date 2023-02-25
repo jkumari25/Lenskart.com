@@ -23,10 +23,11 @@ App.get("/", (req, res) => {
 
 
 App.use("/user",UserRouter)
+
 App.use("/product" , ProductRouter)
 App.use (Auth)
 App.use("/cart" ,CartRouter)
-App.use("/cart" ,OrderRouter)
+App.use("/order" ,OrderRouter)
 
 
 
@@ -127,7 +128,6 @@ App.use("/cart" ,OrderRouter)
 //         res.send("error");
 //     }
 // });
-
 
 //get cartproducts 
 // App.get("/cart", async (req, res) => {
