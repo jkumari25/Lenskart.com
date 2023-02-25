@@ -1,8 +1,7 @@
 import { Box, Button, Center, Flex, FormLabel, Heading, Image, Input, TagLabel, Text, useToast } from '@chakra-ui/react'
-import axios from 'axios'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import { Link, Navigate, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 const AdminEditData = () => {
   const [productid,setProductid]= useState("");
@@ -142,9 +141,9 @@ const AdminEditData = () => {
         <Flex w={["100%","100%","100%","50%"]} flexDirection={["column","column","row","row"]} gap={10} p="20px" boxShadow={"2xl"} borderRadius="16px">
            <Image src={product_image} w="400px"/>
            <Box>
-           <Text fontSize={20}>{product_name}</Text>
-           <Text>{product_price}</Text>
-           <Text textDecoration={"line-through"}>₹ {strike_through}</Text> <span>₹ {strike_through}</span>
+           <Text fontSize={20}>Brand: {product_name}</Text>
+           <Text>₹ {product_price}</Text>
+           <Text textDecoration={"line-through"}>₹ {strike_through}</Text>
            <Text>Frame Size: {size}</Text>
            <Text>Category:{category}</Text>
            </Box>

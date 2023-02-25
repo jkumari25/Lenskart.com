@@ -14,13 +14,6 @@ import {
   InputGroup,
   DrawerContent,
   DrawerOverlay,
-  Heading,
-  Grid,
-  GridItem,
-  Card,
-  CardBody,
-  Image,
-  Stack,
   Button,
 
 } from "@chakra-ui/react";
@@ -28,13 +21,10 @@ import {
 import { FaBell } from 'react-icons/fa';
 import { FiSearch,FiMenu } from 'react-icons/fi';
 import { BsFillCartCheckFill } from 'react-icons/bs';
-import { AiFillEdit } from 'react-icons/ai';
 import { HiCollection} from 'react-icons/hi';
-import { MdDeleteSweep } from 'react-icons/md';
 import { MdHome } from 'react-icons/md';
-import { BsStarHalf } from 'react-icons/bs';
 import {HiOutlineViewGridAdd} from "react-icons/hi"
-import {FaUsers,FaUserPlus} from "react-icons/fa"
+import {FaUsers} from "react-icons/fa"
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProduct } from '../../Redux/AdminRedux/action';
