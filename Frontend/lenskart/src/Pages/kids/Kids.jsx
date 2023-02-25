@@ -1,11 +1,11 @@
 import React from 'react'
-import ProductList from '../ProductList/ProductList'
-import SideBar from '../../components/Sidebar/SideBar'
+import ProductList from '../ProductList/ProductList';
+import SideBar from '../../Components/Sidebar/SideBar';
 import style from './Kids.module.css'
 
 const Kids = () => {
   return (
-    <>
+    <> 
       <div className={style.Kids_Main_Div}>
 
         {/* First Img aat top ---> cool style , hot deals  */}

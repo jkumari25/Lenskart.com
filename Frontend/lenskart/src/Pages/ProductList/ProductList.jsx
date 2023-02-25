@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import ProductCard from '../../components/ProductCard/ProductCard'
+import ProductCard from '../../Components/ProductCard/ProductCard'
 import style from "./ProductList.module.css"
 import { Switch, Stack } from '@chakra-ui/react'
 import { BiSortUp } from "react-icons/bi";

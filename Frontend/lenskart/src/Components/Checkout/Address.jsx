@@ -17,7 +17,7 @@ function Form() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const errors = validate(formData);
-    if (Object.keys(errors).length > 0) {
+    if (Object.keys(errors).length > 0) { 
       setFormErrors(errors);
     } else {
         console.log(formData,formErrors)
@@ -28,44 +28,9 @@ function Form() {
 
   const validate = (formData) => {
     const errors = {};
-    if (!formData.firstName) {
+    if (!formData.firstName || !formData.lastName || !formData.city || !formData.address || !formData.pinCode || !formData.country) {
       errors.firstName = toast({
-        title: `Enter First Name`,
-        status: 'warning',
-        isClosable: true,
-    });
-    }
-    if (!formData.lastName) {
-      errors.lastName = toast({
-        title: `Enter Last Name`,
-        status: 'warning',
-        isClosable: true,
-    });
-    }
-    if (!formData.city) {
-      errors.city = toast({
-        title: `Enter City Name`,
-        status: 'warning',
-        isClosable: true,
-    });
-    }
-    if (!formData.address) {
-      errors.address = toast({
-        title: `Enter Address`,
-        status: 'warning',
-        isClosable: true,
-    });
-    }
-    if (!formData.pinCode) {
-      errors.pinCode = toast({
-        title: `Enter Pin Code`,
-        status: 'warning',
-        isClosable: true,
-    });
-    }
-    if (!formData.country) {
-      errors.country = toast({
-        title: `Enter Country`,
+        title: `Enter All Details`,
         status: 'warning',
         isClosable: true,
     });

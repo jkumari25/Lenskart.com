@@ -69,7 +69,7 @@ const Checkout = () => {
     <>
         <Box bg='#363636' w='100%' p={2} color='white' display="flex" justifyContent="center" alignItems="center">
             <Box w="12%" cursor={"pointer"}>
-            <Image src="" w="100%"/>
+                <Image src="" w="100%"/>
             </Box>
         </Box>
 
