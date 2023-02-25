@@ -1,15 +1,18 @@
-import React from 'react';
-import {Routes,Route} from "react-router-dom";
-import AdminSidebar from "../Components/Jagriti/AdminSidebar"
-import AdminAddProduct from '../Pages/Jagriti/AdminAddProduct';
 
+import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Home from '../Home'
 
 const AllRoutes = () => {
   return (
-   <Routes>
-    <Route path="/admin" element={<AdminSidebar />} />
-    <Route path="/addproduct" element={<AdminAddProduct />} />
-   </Routes>
+    <Routes>
+      
+       <Route path="/" element={<Home/>}/>
+       
+   
+
+    
+    </Routes>
   )
 }
 
