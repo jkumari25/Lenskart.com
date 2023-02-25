@@ -22,8 +22,8 @@ export const getData =(param)=> (dispatch) => {
 
     dispatch(getRequestAction())
 
-    axios.get("http://localhost:8080/all_Eyeglasses",param).then((res)=>{
-        
+    axios.get("https://optic-data.vercel.app/all_Eyeglasses",param).then((res)=>{
+        // console.log(res)
         dispatch(getSuccessAction(res.data))
     }).catch((err)=>{
         dispatch(getErrorAction())

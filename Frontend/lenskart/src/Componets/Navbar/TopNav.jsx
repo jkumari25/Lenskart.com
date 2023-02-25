@@ -106,12 +106,12 @@ const TopNav = () => {
             </Popover>
               
               :
-              <Box display={"flex"}>
+              <Box display={"flex"} >
                 
                 </Box>
                 }
-                <Link to="/login" fontWeight={"400"} fontSize="13px">Sign In</Link>
-                <Link to="/signup"  fontWeight={"400"} fontSize="13px">Sign Up</Link>
+                <Link to="/login" fontWeight={"400"} fontSize="13px" ml="5px">Sign In</Link>
+                <Link to="/signup"  fontWeight={"400"} fontSize="13px" ml="10px">Sign Up</Link>
             </Flex>
                             </Box>
                             <Box display="flex" cursor="pointer">
