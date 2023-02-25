@@ -2,6 +2,7 @@ import {legacy_createStore, combineReducers, compose, applyMiddleware} from "red
 import thunk from "redux-thunk";
 import {reducer as adminReducer} from "./AdminRedux/reducer";
 
+
 const rootReducer= combineReducers({adminReducer});
 
 const composeEnhancers= window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

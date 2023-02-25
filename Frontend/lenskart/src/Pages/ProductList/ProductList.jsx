@@ -5,7 +5,7 @@ import { Switch, Stack } from '@chakra-ui/react'
 import { BiSortUp } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux"
 import { getData } from '../../Redux/ProductReducer/Product.action';
-
+import { useLocation,useSearchParams } from "react-router-dom"
 
 const ProductList = () => {
 
@@ -13,13 +13,27 @@ const ProductList = () => {
   const productsData = useSelector((store) => store.product)
   const isLoading = useSelector((store) => store.isLoading)
   const isError = useSelector((store) => store.isError)
+  const location = useLocation()
+  const [searchParams] = useSearchParams()
 
 
   useEffect(() => {
-    dispatch(getData)
-  }, [])
 
-  // console.log(productsData,isLoading,isError)
+    const order = searchParams.get("order")
+
+    let paramObj={
+      params: {
+        size : searchParams.getAll("size"),
+        _sort: order && "product_price",
+        _order : order && order
+      }
+    }
+
+    dispatch(getData(paramObj))
+
+  }, [location.search])
+
+  // console.log(productsData,location)
 
   return (
     <>

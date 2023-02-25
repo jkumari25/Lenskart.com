@@ -18,11 +18,11 @@ const getErrorAction = () => {
 
 
 
-export const getData = (dispatch) => {
+export const getData =(param)=> (dispatch) => {
 
     dispatch(getRequestAction())
 
-    axios.get("http://localhost:8080/all_Eyeglasses").then((res)=>{
+    axios.get("http://localhost:8080/all_Eyeglasses",param).then((res)=>{
         
         dispatch(getSuccessAction(res.data))
     }).catch((err)=>{

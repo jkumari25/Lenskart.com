@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import style from "./SideBar.module.css"
 import {
   Accordion,
@@ -8,38 +8,80 @@ import {
   AccordionIcon,
   Box,
 } from '@chakra-ui/react'
-
+import { useSearchParams } from "react-router-dom"
 
 
 
 
 const SideBar = () => {
+
+  const [searchParams, setSearchParams] = useSearchParams()
+  const initialState = searchParams.getAll("size")
+  const [size, setSize] = useState(initialState || [])
+  // console.log(searchParams.getAll("size"))
+  const initialOrder = searchParams.get("order")
+  const [order, setOrder] = useState(initialOrder || "")
+
+
+
+  const handelFilter = (e) => {
+
+    let newSize = [...size]
+
+
+    if (newSize.includes(e.target.value)) {
+      newSize.splice(newSize.indexOf(e.target.value), 1)
+    } else {
+      newSize.push(e.target.value)
+    }
+
+    setSize(newSize)
+
+  }
+
+  const handelSort = (e) => {
+    setOrder(e.target.value)
+  }
+
+  useEffect(() => {
+
+    const params = {
+      size
+    }
+
+    order && (params.order = order)
+
+    setSearchParams(params)
+
+  }, [size, order])
+
+// console.log(order);
+
   return (
     <>
 
       <div className={style.SideBar_Main_Container}>
 
+
+
         {/* Age Group Filter */}
         <div className={style.Age_Filter_section}>
 
-          <h1>AGE GROUP</h1>
+          <h1>Sort By</h1>
 
 
-          <div>
-            <input type="checkbox" />
-            <p>2-5 Yrs (37)</p>
-          </div>
-
-          <div>
-            <input type="checkbox" />
-            <p>5-8 Yrs (127)</p>
+          <div onChange={handelSort}>
+            <input type="radio" name='sort_by' value={"asc"}  defaultChecked={order==="asc"} />
+            <p>Price : Low to Heigh</p>
           </div>
 
 
-          <div>
-            <input type="checkbox" />
-            <p>8-12 Yrs (37)</p>
+
+          <div onChange={handelSort}>
+            <input type="radio" name='sort_by' value={"desc"} defaultChecked={order==="desc"} />
+            <p>Price : Hight to Low</p>
           </div>
+
 
         </div>
 
@@ -96,6 +138,61 @@ const SideBar = () => {
 
           </div>
         </div>
+
+
+
+        {/* FRAME SIZE  */}
+
+        <div className={style.Frame_Size_Main_section}>
+
+
+          <Accordion allowMultiple>
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box as="span" flex='1' textAlign='left'>
+                    <h1 className={style.Frame_Color_section_heading}> FRAME SIZE</h1>
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+
+              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Size}>
+                <input type="checkbox" value={"Medium"} onChange={handelFilter} checked={size.includes("Medium")} />
+                <h1>MEDIUM</h1>
+              </AccordionPanel>
+
+              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Size}>
+                <input type="checkbox" value={"Wide"} onChange={handelFilter} checked={size.includes("Wide")} />
+                <h1>WIDE</h1>
+              </AccordionPanel>
+
+
+              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Size}>
+                <input type="checkbox" value={"Narrow"} onChange={handelFilter} checked={size.includes("Narrow")} />
+                <h1>NARROW</h1>
+              </AccordionPanel>
+
+
+              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Size}>
+                <input type="checkbox" value={"Extra Narrow"} onChange={handelFilter} checked={size.includes("Extra Narrow")} />
+                <h1>EXTRA-NARROW</h1>
+              </AccordionPanel>
+
+
+              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Size}>
+                <input type="checkbox" value={"Extra Wide"} onChange={handelFilter} checked={size.includes("Extra Wide")} />
+                <h1>EXTRA-WIDE</h1>
+              </AccordionPanel>
+
+
+            </AccordionItem>
+
+
+          </Accordion>
+
+        </div>
+
 
 
 
@@ -216,39 +313,6 @@ const SideBar = () => {
         </div>
 
 
-        {/* FRAME SIZE  */}
-
-        <div className={style.Frame_Size_Main_section}>
-
-
-          <Accordion allowMultiple>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box as="span" flex='1' textAlign='left'>
-                    <h1 className={style.Frame_Color_section_heading}> FRAME SIZE</h1>
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-
-              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Size}>
-                <input type="checkbox" />
-                <h1>MEDIUM(2)</h1>
-              </AccordionPanel>
-
-              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Size}>
-                <input type="checkbox" />
-                <h1>LARGE(1)</h1>
-              </AccordionPanel>
-
-
-            </AccordionItem>
-
-
-          </Accordion>
-
-        </div>
 
 
 
@@ -584,7 +648,7 @@ const SideBar = () => {
 
 
         {/* FRAME WIDTH  */}
-        <div  className={style._Main_section}>
+        <div className={style._Main_section}>
 
 
           <Accordion allowMultiple>
