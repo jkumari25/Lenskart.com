@@ -16,16 +16,17 @@ const AdminAddProduct = () => {
   const [category,setCategory]= useState("");
   const [rating_value,setRatingValue]= useState("");
 
-const {product,isLoading}= useSelector((store) =>{
-  return{
-    product: store.adminReducer.product,
-    isLoading: store.adminReducer.isLoading
-  }
-})
+// const {product,isLoading}= useSelector((store) =>{
+//   return{
+//     product: store.adminReducer.product,
+//     isLoading: store.adminReducer.isLoading
+//   }
+// })
 
-    const dispatch= useDispatch();
+    // const dispatch= useDispatch();
     const toast = useToast()
     const navigate=useNavigate()
+  
     const handleLogout=()=>
     {
         localStorage.removeItem("token")
@@ -42,7 +43,14 @@ const {product,isLoading}= useSelector((store) =>{
         body: JSON.stringify(prodata),
       })
         .then((res) => {
-          alert('Saved successfully.')
+          toast({
+            position: "bottom-left",
+            title: "Product Added SuccessFully ",
+            description: "SuccessFul.",
+            status: "success",
+            duration: 4000,
+            isClosable: true,
+          });
           navigate('/admin')
         })
         .catch((err) => {
@@ -145,9 +153,11 @@ const {product,isLoading}= useSelector((store) =>{
            <Image src={product_image} w="400px"/>
            <Box>
            <Text fontSize={20}>Brand: {product_name}</Text>
-           <Text textDecoration={"line-through"}>Price: ₹ {strike_through}</Text> <span>Offer Price:₹ {strike_through}</span>
+           <Text>Offer Price: ₹ {product_price} </Text>
+           <Text textDecoration={"line-through"}>Price: ₹ {strike_through}</Text>
            <Text>Category :- {category}</Text>
-           <Text>{size}</Text> 
+           <Text>Frame Size:- {size}</Text> 
+           <Text>Rating:- {rating_value}</Text> 
            </Box>
         </Flex>
      </Flex>  
