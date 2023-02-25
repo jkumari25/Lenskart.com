@@ -5,8 +5,8 @@ import { reducer as CartReducer } from "./CartRedux/CartReducer";
 import { reducer as ProductReducer } from "./ProductReducer/Product.reducer"
 
 
-const rootReducer = combineReducers({ adminReducer, CartReducer,ProductReducer });
 
+const rootReducer = combineReducers({ adminReducer, CartReducer,ProductReducer });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
