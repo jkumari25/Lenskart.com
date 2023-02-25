@@ -10,6 +10,7 @@ import Checkout from '../Components/Checkout/Checkout';
 import Form from '../Components/Checkout/Address';
 import Home from '../Home'
 import Signup from '../Pages/Signup/Signup';
+import Login from '../Pages/Login/Login';
 
 
 const AllRoutes = () => {
@@ -25,6 +26,7 @@ const AllRoutes = () => {
     <Route path="/checkout" element={<Checkout/>}/>
     <Route path="/address" element={<Form/>}/>
     <Route path="/signup" element={<Signup/>}/>
+    <Route path="/login" element={<Login/>}/>
    </Routes>
   )
 }
