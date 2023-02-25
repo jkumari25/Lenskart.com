@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box, 
   Flex, 
@@ -14,23 +14,67 @@ import {
   InputGroup,
   DrawerContent,
   DrawerOverlay,
+  Heading,
+  Grid,
+  GridItem,
+  Card,
+  CardBody,
+  Image,
+  Stack,
+  Button,
+
 } from "@chakra-ui/react";
 
 import { FaBell } from 'react-icons/fa';
 import { FiSearch,FiMenu } from 'react-icons/fi';
-import { BsGearFill } from 'react-icons/bs';
-import { AiFillGift } from 'react-icons/ai';
+import { BsFillCartCheckFill } from 'react-icons/bs';
+import { AiFillEdit } from 'react-icons/ai';
 import { HiCollection} from 'react-icons/hi';
-import { FaHouseUser } from 'react-icons/fa';
+import { MdDeleteSweep } from 'react-icons/md';
 import { MdHome } from 'react-icons/md';
-import AdminData from './AdminData';
+import { BsStarHalf } from 'react-icons/bs';
 import {HiOutlineViewGridAdd} from "react-icons/hi"
 import {FaUsers,FaUserPlus} from "react-icons/fa"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProduct } from '../../Redux/AdminRedux/action';
+import AdminData from './AdminData';
+// import img from "./utils/logo.jpg";
 
 const AdminSidebar = () => {
   const sidebar = useDisclosure();
   const color = useColorModeValue("grey.600", "grey.300");
+
+  const product= useSelector((store)=> store.adminReducer.product);
+  console.log(product);
+  const [data,setData]= useState("");
+  const navigate= useNavigate();
+  
+  const dispatch= useDispatch();
+
+  const handleDelete= (id) =>{
+    if (window.confirm('Do you want to remove?')) {
+      fetch('http://localhost:3004/product/' + id, {
+        method: 'DELETE',
+      })
+        .then((res) => {
+          alert('Removed successfully.')
+          window.location.reload()
+        })
+        .catch((err) => {
+          console.log(err.message)
+        })
+    }
+  }
+
+  const handleLogout= ()=>{
+    localStorage.removeItem("token")
+        navigate("/")
+  }
+
+  useEffect(()=>{
+  dispatch(getProduct())
+  },[]);
 
   const NavItem = (props) => {
     const { icon, children, ...rest } = props;
@@ -46,9 +90,9 @@ const AdminSidebar = () => {
           color: "gray.400",
         }}
         _hover={{
-          bg: "gray.100",
+          bg: "#2C5282",
           _dark: {
-            bg: "gray.900",
+            bg: "#2C5282",
           },
           color: "gray.900",
         }}
@@ -91,7 +135,7 @@ const AdminSidebar = () => {
       color="green"
       borderRightWidth="1px"
       w="60"
-      backgroundColor="teal.400"
+      backgroundColor="#90CDF4"
       {...props}
     >
       <Flex px="4" py="5" align="center">
@@ -99,15 +143,17 @@ const AdminSidebar = () => {
         <Text
           fontSize="4xl"
           ml="2"
-          color="purple.700"
+          color="black"
           _dark={{
             color: "white",
           }}
           fontWeight="bold"
           fontStyle="sans-serif"
         >
-          OpticKart
+         {/* <img src={img} alt="" /> */}
+         Dashboard
         </Text>
+        <br/>
       </Flex>
       <Flex
         direction="column"
@@ -116,88 +162,96 @@ const AdminSidebar = () => {
         color="gray.600"
         aria-label="Main Navigation"
       >
-        <NavItem icon={MdHome} fontSize="2xl" fontWeight="bold" color="purple.800" border="2px solid" borderRadius="5px" >Home</NavItem>
-        {/* <NavItem icon={FaRss}>All Users</NavItem> */}
-        <NavItem icon={HiCollection} fontSize="2xl" fontWeight="bold" color="purple.800" border="2px solid" borderRadius="5px" mt="10px">Collections</NavItem>
-        <Link to="/addproduct">
-        <NavItem icon={HiOutlineViewGridAdd} fontSize="2xl" fontWeight="bold"color="purple.800" border="2px solid" borderRadius="5px"  mt="10px">Add Product</NavItem>
+        <Link to="/admin">
+        <NavItem icon={MdHome} fontSize="2xl" fontWeight="bold" color="black" borderRadius="5px" >Home</NavItem>
         </Link>
-        <NavItem icon={FaUsers} fontSize="2xl" fontWeight="bold" color="purple.800" border="2px solid" borderRadius="5px"  mt="10px">Users</NavItem>
-        <NavItem icon={FaUserPlus} fontSize="2xl" fontWeight="bold" color="purple.800" border="2px solid" borderRadius="5px" mt="10px">Add User</NavItem>
+        <br/>
+        <NavItem icon={HiCollection} fontSize="2xl" fontWeight="bold" color="black"  borderRadius="5px" >Collections</NavItem>
+        <br/>
+        <Link to="/addproduct">
+        <NavItem icon={HiOutlineViewGridAdd} fontSize="2xl" fontWeight="bold"color="black" borderRadius="5px"  mt="10px">Add Product</NavItem>
+        </Link>
+        <br/>
+        <Link to="/alluser">
+        <NavItem icon={FaUsers} fontSize="2xl" fontWeight="bold" color="black" borderRadius="5px"  mt="10px">Users Info</NavItem>
+        </Link>
+        <br/>
+        <Link to="/allorder">
+        <NavItem icon={BsFillCartCheckFill} fontSize="2xl" fontWeight="bold" color="black"  borderRadius="5px" mt="10px">Orders</NavItem>
+        </Link>
       </Flex>
     </Box>
-  );
-
+    );
   return (
-    <Box
-      as="section"
-      bg="grey.50"
-      _dark={{
-        bg: "grey.700",
-      }}
-      minH="100vh"
-    >
-      <SidebarContent
-        display={{
-          base: "none",
-          md: "unset",
-        }}
-      />
-      <Drawer
-        isOpen={sidebar.isOpen}
-        onClose={sidebar.onClose}
-        placement="left"
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <SidebarContent w="full" borderRight="none" />
-        </DrawerContent>
-      </Drawer>
+    <Box>
       <Box
-        ml={{
-          base: 0,
-          md: 60,
+        as="section"
+       
+        _dark={{
+          bg: "gray.700",
         }}
-        transition=".3s ease"
+        minH="100vh"
       >
-        <Text mt="5px" textAlign="left" ml="10px" style={{fontSize:"30px",fontWeight:"bold",color:"teal", fontFamily:"sans-serif"}}>
-        Welcome! to Admin Pannel </Text>
-        <Flex
-          as="header"
-          align="center"
-          justify="space-between"
-          w="full"
-          px="4"
-          bg="white"
-          _dark={{
-            bg: "gray.800",
+        <SidebarContent
+          display={{
+            base: "none",
+            md: "unset",
           }}
-          borderBottomWidth="1px"
-          color="inherit"
-          h="14"
+        />
+        <Drawer
+          isOpen={sidebar.isOpen}
+          onClose={sidebar.onClose}
+          placement="left"
         >
-          <IconButton
-            aria-label="Menu"
-            display={{
-              base: "inline-flex",
-              md: "none",
+          <DrawerOverlay />
+          <DrawerContent>
+            <SidebarContent w="full" borderRight="none" />
+          </DrawerContent>
+        </Drawer>
+        <Box
+          ml={{
+            base: 0,
+            md: 60,
+          }}
+          transition=".3s ease"
+        >
+          <Flex
+            as="header"
+            align="center"
+            justify="space-between"
+            w="full"
+            px="4"
+            bg="white"
+            _dark={{
+              bg: "gray.800",
             }}
-            onClick={sidebar.onOpen}
-            icon={<FiMenu />}
-            size="sm"
-          />
+            borderBottomWidth="1px"
+            borderColor="blackAlpha.300"
+            h="14"
+          >
+            <IconButton
+              aria-label="Menu"
+              display={{
+                base: "inline-flex",
+                md: "none",
+              }}
+              onClick={sidebar.onOpen}
+              icon={<FiMenu />}
+              size="sm"
+            />
           <InputGroup
             w="96"
             display={{
               base: "none",
               md: "flex",
             }}
-          >
+            >
+           
             <InputLeftElement color="gray.500">
               <FiSearch />
             </InputLeftElement>
-            <Input placeholder="Search for articles..." />
-          </InputGroup>
+            <Input placeholder="Search for products..." />
+            </InputGroup>
 
           <Flex align="center" >
             <Icon color="gray.500" as={FaBell} cursor="pointer" />
@@ -208,16 +262,20 @@ const AdminSidebar = () => {
               src="https://avatars.githubusercontent.com/u/30869823?v=4"
               cursor="pointer"
             />
+            <Button ml="5px" color="red" onClick={handleLogout}>Logout</Button>
           </Flex>
-        </Flex>
-        <Box as="main">
+          </Flex>
+          <Box>
           <AdminData />
+         </Box>
+          </Box>
         </Box>
       </Box>
-    </Box>
+   
   );
 };
 
 
 export default AdminSidebar
 
+{/*  */}

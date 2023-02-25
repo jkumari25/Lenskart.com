@@ -1,0 +1,28 @@
+#lr-btn{
+
+position: relative;
+display: flex;
+justify-content: space-between;
+}
+
+#lr-btn p{
+font-size: 40px;
+position: relative;
+bottom: 200px;
+color: aliceblue;
+}
+#lr-btn p:first-child{
+
+
+    transform: rotate(180deg)
+}
+#lr-btn p:first-child:hover{
+
+    font-size: 45px;
+}
+#lr-btn p:last-child:hover{
+
+    font-size: 45px;
+}
+
+
