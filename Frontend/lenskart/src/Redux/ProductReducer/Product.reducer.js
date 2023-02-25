@@ -20,6 +20,6 @@ export const reducer = (state = initialState, { type, payload }) => {
             return { ...state, isLoading: false, isError: true }
 
         default:
-            return state
+            return state 
     }
 }
