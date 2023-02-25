@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {Routes,Route} from "react-router-dom";
 import AdminSidebar from "../Components/Jagriti/AdminSidebar"
@@ -8,10 +7,8 @@ import Order from '../Pages/Jagriti/Order';
 import User from '../Pages/Jagriti/Users';
 import CartItem from "../Components/Cart/CartItem";
 import Checkout from '../Components/Checkout/Checkout';
-// import Form from '../Components/Checkout/Address';
-import Home from '../Home';
-// import Kids from "../Pages/kids/Kids";
-// import SingleProductPage from "../Pages/"
+import Form from '../Components/Checkout/Address';
+import Home from '../Home'
 
 const AllRoutes = () => {
   return (
@@ -24,9 +21,7 @@ const AllRoutes = () => {
     <Route path="/allorder" element={<Order />} />
     <Route path="/cart" element={<CartItem/>}/>
     <Route path="/checkout" element={<Checkout/>}/>
-    {/* <Route path="/address" element={<Form/>}/> */}
-    {/* <Route path="/kids" element={<Kids/>}/> */}
-    {/* <Route path="/singleproduct/:id" element={<SingleProductPage/>}/> */}
+    <Route path="/address" element={<Form/>}/>
    </Routes>
   )
 }

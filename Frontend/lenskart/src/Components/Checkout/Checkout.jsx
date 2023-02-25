@@ -24,7 +24,7 @@ const Checkout = () => {
                 title: `Enter Mobile Number`,
                 status: 'warning',
                 isClosable: true,
-              })
+            })
             setopts(false);
         }
     }
@@ -59,6 +59,9 @@ const Checkout = () => {
             setopts(false);
         }
     }
+    const handleAddress = ()=>{
+        navigate("/address");
+    }
     const handlePayClick = ()=>{
         navigate("/payment");
     }
@@ -73,7 +76,9 @@ const Checkout = () => {
         <Box style={{display:"flex",height:"auto",width:"85%",margin:"auto"}}>
             <Box style={{flex:"7"}}>
                 <Box id="clip">
-                    <span  style={{color:"#363636", backgroundColor:"rgb(242, 245, 248)"}}><TbCircle1 fontSize="25px"/> Registration & Login</span><span><TbCircle2 fontSize="25px"/> Shipping Address</span><span onClick={handlePayClick}><TbCircle3 fontSize="25px"/> Payment & Discount</span>
+                    <span  style={{color:"#363636", backgroundColor:"rgb(242, 245, 248)"}}><TbCircle1 fontSize="25px"/> Registration & Login</span>
+                    <span onClick={handleAddress}><TbCircle2 fontSize="25px"/> Shipping Address</span>
+                    <span onClick={handlePayClick}><TbCircle3 fontSize="25px"/> Payment</span>
                 </Box>
                 <Box style={{width:"95%",margin:"auto",marginTop:"50px"}}>
                     <Text fontWeight="bold" fontFamily="sans-serif">MOBILE</Text>
@@ -81,7 +86,7 @@ const Checkout = () => {
                     <Button marginLeft="5px" onClick={handleoptinp}>Send OTP</Button>
                     {opts? <Box>
                         <Text fontWeight="bold" fontFamily="sans-serif">OTP</Text>
-                        <HStack>
+                        <HStack display="flex" justifyContent="center">
                         <PinInput>
                             <PinInputField />
                             <PinInputField />
