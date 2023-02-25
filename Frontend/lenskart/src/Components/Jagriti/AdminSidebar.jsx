@@ -35,7 +35,7 @@ import { MdHome } from 'react-icons/md';
 import { BsStarHalf } from 'react-icons/bs';
 import {HiOutlineViewGridAdd} from "react-icons/hi"
 import {FaUsers,FaUserPlus} from "react-icons/fa"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProduct } from '../../Redux/AdminRedux/action';
 import AdminData from './AdminData';
@@ -48,6 +48,7 @@ const AdminSidebar = () => {
   const product= useSelector((store)=> store.adminReducer.product);
   console.log(product);
   const [data,setData]= useState("");
+  const navigate= useNavigate();
   
   const dispatch= useDispatch();
 
@@ -64,6 +65,11 @@ const AdminSidebar = () => {
           console.log(err.message)
         })
     }
+  }
+
+  const handleLogout= ()=>{
+    localStorage.removeItem("token")
+        navigate("/")
   }
 
   useEffect(()=>{
@@ -210,7 +216,6 @@ const AdminSidebar = () => {
           transition=".3s ease"
         >
           <Flex
-          
             as="header"
             align="center"
             justify="space-between"
@@ -241,7 +246,7 @@ const AdminSidebar = () => {
               md: "flex",
             }}
             >
-         
+           
             <InputLeftElement color="gray.500">
               <FiSearch />
             </InputLeftElement>
@@ -257,6 +262,7 @@ const AdminSidebar = () => {
               src="https://avatars.githubusercontent.com/u/30869823?v=4"
               cursor="pointer"
             />
+            <Button ml="5px" color="red" onClick={handleLogout}>Logout</Button>
           </Flex>
           </Flex>
           <Box>

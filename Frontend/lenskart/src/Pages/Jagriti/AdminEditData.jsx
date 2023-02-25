@@ -12,6 +12,7 @@ const AdminEditData = () => {
   const [strike_through,setStrikeThrough]= useState(null);
   const [size,setSize]= useState(null);
   const [category,setCategory]= useState("");
+  const [product,setProduct]= useState([]);
 
     const {id}=useParams()
     const toast = useToast()
@@ -27,6 +28,7 @@ const AdminEditData = () => {
           return res.json();
       }).
       then((res) => {
+          setProduct(res[0]);
           setProductid(res.productid);
           setProductName(res.product_name);
           setProductPrice(res.product_price);
@@ -41,16 +43,23 @@ const AdminEditData = () => {
   }, []);
    
     const handleUpdate=()=> {
-      // e.preventDefault();
+     
       const prodata={productid,product_name,product_price,strike_through,product_image,category,size};
       
-      fetch("https://silly-tank-top-eel.cyclic.app/product"+ id,{
+      fetch("https://silly-tank-top-eel.cyclic.app/product/update"+ id,{
         method:"PATCH",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(prodata)
       })
       .then((res)=>{
-        alert('Updated successfully.')
+        toast({
+          position: "bottom-left",
+          title: "Product Updated SuccessFully ",
+          description: "SuccessFul.",
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+        });
         navigate('/admin');
       })
       .catch((err)=>{

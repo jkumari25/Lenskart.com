@@ -52,6 +52,7 @@ UserRouter.post("/login", async (req, res) => {
         res.send("not autorised");
     }
 });
+
 //get ujser here
 UserRouter.get("/", async (req, res) => {
     try {

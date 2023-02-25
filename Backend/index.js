@@ -22,8 +22,9 @@ App.get("/", (req, res) => {
 
 
 App.use("/user",UserRouter)
-App.use (Auth)
+
 App.use("/product" , ProductRouter)
+App.use (Auth)
 App.use("/cart" ,CartRouter)
 
 
