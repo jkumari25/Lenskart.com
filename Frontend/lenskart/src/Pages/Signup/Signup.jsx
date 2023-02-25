@@ -1,5 +1,5 @@
 import React from "react";
-import { useContext } from "react";
+
 import {
   Center,
   Heading,
@@ -24,10 +24,10 @@ import {
 import { useState } from "react";
 import Required from "./Required";
 import { useEffect } from "react";
-import { AuthContext } from "../../ContextApi/AuthContext";
+
 
 const Signup = () => {
-  const init = {
+  const here = {
     first_name: "",
     last_name: "",
     ph_no: "",
@@ -35,14 +35,13 @@ const Signup = () => {
     password: "",
   };
 
-  const [userData, setUserData] = useState(init);
+  const [userData, setUserData] = useState(here);
   const [first, setFirst] = useState();
   const [ph, setPh] = useState();
   const [mail, setMail] = useState();
   const [pass, setPass] = useState();
   const [loading, setLoading] = useState(false);
-  // const [register,setRegister]=useState(false);
-  // const { isAuth,setisAuth ,register,setRegister }=useContext(AuthContext);
+  
   const [Auth, setAuth] = useState();
   const [exist, setExist] = useState(false);
   var flag = false;
@@ -63,7 +62,7 @@ const Signup = () => {
           value === "" ? (
             <Required info="This is required" />
           ) : (
-            <Required info="Please enter a valid mobile number (eg. 9987XXXXXX)" />
+            <Required info="Please enter a valid mobile number (eg. 9924XXXXXX)" />
           )
         );
 
@@ -74,7 +73,7 @@ const Signup = () => {
           value === "" ? (
             <Required info="This is required" />
           ) : (
-            <Required info="Please enter a valid email address e.g. johndoe@domain.com." />
+            <Required info="Please enter a valid email address e.g. safwan12@domain.com." />
           )
         );
 
@@ -85,7 +84,7 @@ const Signup = () => {
           value === "" ? (
             <Required info="This is required" />
           ) : (
-            <Required info="Password should be more than 6 characters." />
+            <Required info="Password should be more than 7 characters." />
           )
         );
 
@@ -218,7 +217,7 @@ const Signup = () => {
                 borderColor={"rgb(206, 206, 223)"}
                 m={"8px 0px 8px 0px"}
               />
-              {userData.password.length >= 6 ? "" : pass}
+              {userData.password.length >= 7 ? "" : pass}
               <HStack>
                 <Box
                   textDecoration={"underline"}
@@ -247,7 +246,7 @@ const Signup = () => {
                   h="22px"
                 />
               </HStack>
-              {exist === true ? <Required info="EmailId already exists" /> : ""}
+              {exist === true ? <Required info="EmailId already exists please enter new email Adress" /> : ""}
               <HStack spacing={"3px"} mb="10px">
                 <Box
                   fontSize={"14px"}
@@ -263,7 +262,7 @@ const Signup = () => {
               </HStack>
 
               {userData.email.includes("@gmail.") &&
-              userData.password.length >= 6 &&
+              userData.password.length >= 7 &&
               userData.ph_no.length == 10 ? (
                 <Button
                   isLoading={loading}
