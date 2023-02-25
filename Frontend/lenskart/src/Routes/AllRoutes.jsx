@@ -7,6 +7,7 @@ import Order from '../Pages/Jagriti/Order';
 import User from '../Pages/Jagriti/Users';
 import CartItem from "../Components/Cart/CartItem";
 import Checkout from '../Components/Checkout/Checkout';
+import Form from '../Components/Checkout/Address';
 
 
 const AllRoutes = () => {
@@ -19,6 +20,7 @@ const AllRoutes = () => {
     <Route path="/allorder" element={<Order />} />
     <Route path="/cart" element={<CartItem/>}/>
     <Route path="/checkout" element={<Checkout/>}/>
+    <Route path="/address" element={<Form/>}/>
    </Routes>
   )
 }
