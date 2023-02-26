@@ -14,24 +14,52 @@ const SingleProductPage = () => {
 
   const { id } = useParams()
   const [data, setData] = useState({})
-  const [singleProduct,setSingleProduct] = useState({})
+  const [singleProduct,setSingleProduct] = useState([])
   const isLoading = useSelector((store) => store.ProductReducer.isLoading)
   const product = useSelector((store) => store.ProductReducer.product)
   const toast = useToast()
   const dispatch= useDispatch()
 
-  const handelCart=(item)=>{
+  // const handelCart=(item)=>{
  
 
+  //   toast({
+  //     title: 'Added To Cart.',
+  //     position: 'top-center',
+  //     status: 'success',
+  //     duration: 2000,
+  //     isClosable: true,
+  //   })
+  //   dispatch(getData(singleProduct))
+  // }
+
+  const handleAddToCart = () => {
+
+    let cartItems = [];
+    if (localStorage.getItem('cartItems')) {
+      cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    }
+    const selectedProduct = {
+      product_name:singleProduct.product_name,
+       _id: singleProduct._id, 
+       product_image:singleProduct.product_image,
+       product_price:singleProduct.product_price, 
+       category: singleProduct.category, 
+       strike_through: singleProduct.strike_through
+      };
+    cartItems.push(selectedProduct);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems)) 
     toast({
-      title: 'Added To Cart.',
-      position: 'top-center',
-      status: 'success',
-      duration: 2000,
-      isClosable: true,
-    })
-    dispatch(getData(singleProduct))
-  }
+          title: 'Added To Cart.',
+          position: 'top-center',
+          status: 'success',
+          duration: 2000,
+          isClosable: true,
+        })
+
+      
+  
+  };
 
   useEffect(()=>{
    axios.get(`https://optic-data.vercel.app/all_Eyeglasses/${id}`)
@@ -88,7 +116,7 @@ console.log(singleProduct)
 
           <div className={style.Single_Product_Page_Add_To_cart_Button_Main_Section}>
 
-            <Button colorScheme='messenger' width="full" onClick={() =>handelCart(data)}>Add To Cart</Button>
+            <Button colorScheme='messenger' width="full" onClick={handleAddToCart}>Add To Cart</Button>
             <Button colorScheme='pink' variant='solid' width="full">Add To Wishlist</Button>
 
           </div>

@@ -27,6 +27,7 @@ import Required from "./Required";
 import { useEffect } from "react";
 import { AuthContext } from "../../ContextApi/AuthContext";
 import { useNavigate } from "react-router-dom";
+import Login from "../Login/Login";
 
 const Signup = () => {
   const init = {
@@ -118,7 +119,7 @@ const Signup = () => {
                     console.log(res.status);
                     if(res.status==200){
                       alert("Signup Succesfull...")
-                      navigate("/login")
+                      navigate(<Login />)
                     }
                 }).catch((e)=>{
                   console.log(e)

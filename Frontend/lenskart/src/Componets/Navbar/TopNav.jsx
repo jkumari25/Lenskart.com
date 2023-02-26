@@ -127,10 +127,12 @@ const TopNav = () => {
                 </Box>
                 }
 
-                {name?<Text>{name}</Text>:<Box><Login></Login>
-                <Signup></Signup></Box>}
-                 
+                {name?<Text>{name}</Text>:<Box><Login/>
+                <Signup/></Box>}
                 
+                 <Link to="/adminlogin">
+                <Text>Admin</Text>
+                </Link>
                 {/* <Link to="/login" fontWeight={"400"} fontSize="13px" ml="5px">Sign In</Link>
                 <Link to="/signup"  fontWeight={"400"} fontSize="13px" ml="10px">Sign Up</Link> */}
             </Flex>
@@ -225,4 +227,3 @@ const TopNav = () => {
     )
 }
 export default TopNav;
-

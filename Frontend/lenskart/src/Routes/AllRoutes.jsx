@@ -18,6 +18,7 @@ import Kids from "../Pages/kids/Kids";
 import Payment from "../Components/Payment/Payment";
 import SingleProductPage from '../Pages/SingleProductPage/SingleProductPage';
 import Contact_Lens from '../Pages/Contact-lens/Contact_Lens';
+import AdminLogin from '../Pages/Jagriti/AdminLogin';
 
 
 const AllRoutes = () => {
@@ -35,11 +36,13 @@ const AllRoutes = () => {
 
     <Route path="/signup" element={<Signup/>}/>
     <Route path="/login" element={<Login/>}/>
+    <Route path="/adminlogin" element={<AdminLogin />} />
 
     <Route path="/kids" element={<Kids/>}/>
     <Route path="/payment" element={<Payment/>}/>
     <Route path='/single/:id' element={<SingleProductPage/>}/>
     <Route path='/contact' element={<Contact_Lens/>}/>
+  
 
    </Routes>
   )

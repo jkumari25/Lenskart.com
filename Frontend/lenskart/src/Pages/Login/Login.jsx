@@ -62,7 +62,7 @@ const Login = (props) => {
   let loData1 = [];
 
   const getData=(body)=>{
-    // console.log(body)
+    console.log(body)
     let {email,password}=body;
 
     let send_data={
@@ -78,7 +78,7 @@ const Login = (props) => {
              })
                .then((r)=>r.json())
                .then((res) => {
-                  //  console.log(res);
+                   console.log(res);
                    if(res.status=="login successful"){
                     localStorage.setItem("name",JSON.stringify(res.name));
                     localStorage.setItem("token",JSON.stringify(res.token));
@@ -120,9 +120,9 @@ const Login = (props) => {
       getData(loginData);
     }
   };
-  // console.log(loginData);
-  // console.log("incorrect", incorrect);
-  // console.log(isAuth);
+  console.log(loginData);
+  console.log("incorrect", incorrect);
+  console.log(isAuth);
 
   return (
     <div>

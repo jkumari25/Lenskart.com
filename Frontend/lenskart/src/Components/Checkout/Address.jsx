@@ -38,6 +38,7 @@ function Form() {
       setFormData({firstName: "", lastName: "", city: "", address: "", pinCode: "", country: ""});
       setFormErrors({firstName: "", lastName: "", city: "", address: "", pinCode: "", country: "" });
     }
+
   };
 
   const validate = (formData) => {
