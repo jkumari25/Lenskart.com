@@ -134,7 +134,7 @@ const TopNav = () => {
                 {/* <Link to="/login" fontWeight={"400"} fontSize="13px" ml="5px">Sign In</Link>
                 <Link to="/signup"  fontWeight={"400"} fontSize="13px" ml="10px">Sign Up</Link> */}
             </Flex>
-                            </Box>
+                             </Box>
                             <Box display="flex" cursor="pointer">
                                 <Image h="75%" src="https://static.lenskart.com/media/desktop/img/wishlist.png" alt="icon"></Image>
                                 <Text ml="15%">Wishlist</Text>
