@@ -35,6 +35,8 @@ import {
   import { FiMenu } from "react-icons/fi";
  
 import { AuthContext } from '../../ContextApi/AuthContext';
+import Login from '../../Pages/Login/Login';
+import Signup from '../../Pages/Signup/Signup';
 const TopNav = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const firstField = React.useRef()
@@ -74,13 +76,13 @@ const TopNav = () => {
                     </Box>
                 </Box>
                
-                <Box display="flex" p="0% 1.5%">
+                <Box display="flex" p="0% 1.5%" >
                 <Link to="/">
                     <Box w="14%" cursor="pointer" ml="-1%" bg=""> 
                     <Image w="100%" h="100%" src={img} alt='Lenskart' />
                     </Box>
                     </Link>
-                    <Box width="10%" ml="5%" bg="">
+                    <Box width="10%" ml="5%" >
                         <Image h="100%" width="100%"  src="https://static.lenskart.com/media/mobile/images/phone_number.svg" alt="ph-no"></Image>
                     </Box>
                    
@@ -117,14 +119,14 @@ const TopNav = () => {
                 </Box>
                 }
 
-                <Link to="/login" fontWeight={"400"} fontSize="13px" ml="5px">Sign in</Link>
-                <Link to="/signup"  fontWeight={"400"} fontSize="13px" ml="10px">Sign Up</Link>
+                <Link fontWeight={"400"} fontSize="13px" ml="5px"><Login /></Link>
+                <Link fontWeight={"400"} fontSize="13px" ml="10px"><Signup /></Link>
             </Flex>
                             </Box>
-                            <Box display="flex" cursor="pointer">
+                            {/* <Box display="flex" cursor="pointer">
                                 <Image h="75%" src="https://static.lenskart.com/media/desktop/img/wishlist.png" alt="icon"></Image>
                                 <Text ml="15%">Wishlist</Text>
-                            </Box>
+                            </Box> */}
                             <Link to="/cart">
                             <Box display="flex" cursor="pointer">
                                 <Image h="65%" src="https://static.lenskart.com/media/desktop/img/cart.png" alt="icon"></Image>
