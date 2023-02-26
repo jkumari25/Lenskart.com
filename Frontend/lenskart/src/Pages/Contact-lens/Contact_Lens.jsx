@@ -1,12 +1,14 @@
 import React from 'react'
 import style from "./Contact_Lens.module.css"
 import { FaGreaterThan } from "react-icons/fa";
+import TopNav from '../../Componets/Navbar/TopNav';
+import Footer from "../../Componets/Footer/Footer"
 
 
 const Contact_Lens = () => {
     return (
         <>
-
+           <TopNav />
             <div className={style.Contact_Lens_Main_Section}>
 
                 {/* Order Contact Tab  */}
@@ -605,9 +607,7 @@ const Contact_Lens = () => {
                 </div>
 
             </div>
-
-         
-
+         <Footer />
         </>
     )
 }

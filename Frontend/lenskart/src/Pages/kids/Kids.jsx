@@ -1,11 +1,14 @@
 import React from 'react'
 import SideBar from '../../Components/Sidebar/SideBar'
+import TopNav from '../../Componets/Navbar/TopNav'
 import ProductList from '../ProductList/ProductList'
 import style from './Kids.module.css'
+import Footer from '../../Componets/Footer/Footer'
 
 const Kids = () => {
   return (
     <>
+    <TopNav />
       <div className={style.Kids_Main_Div}>
 
         {/* First Img aat top ---> cool style , hot deals  */}
@@ -32,7 +35,7 @@ const Kids = () => {
 
 
       </div>
-
+     <Footer/>
     </>
   )
 }

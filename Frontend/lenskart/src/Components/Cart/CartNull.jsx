@@ -1,8 +1,12 @@
 import React from "react";
 import { Alert, AlertIcon, AlertTitle, Button, Box } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import TopNav from "../../Componets/Navbar/TopNav";
+import Footer from "../../Componets/Footer/Footer";
 const CartNull = () => {
   return (
+    <>
+    <TopNav />
     <Box m="auto">
       <Alert
         status="warning"
@@ -22,6 +26,8 @@ const CartNull = () => {
         </Button>
       </Alert>
     </Box>
+    <Footer />
+    </>
   );
 };
 

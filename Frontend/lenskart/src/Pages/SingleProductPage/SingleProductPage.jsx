@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom"
 import style from "./SingleProductPage.module.css"
 import {  Button,  } from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react'
+import TopNav from '../../Componets/Navbar/TopNav'
+import Footer from "../../Componets/Footer/Footer"
 
 const SingleProductPage = () => {
 
@@ -38,7 +40,7 @@ console.log(singleProduct)
 // console.log(data+"Single")
   return (
     <>
-
+        <TopNav />
       <div className={style.Single_Product_Page_Main_Container}>
         {/* img  */}
         <div className={style.Single_Product_Page_Img_Main_div}>
@@ -84,7 +86,7 @@ console.log(singleProduct)
 
         </div>
       </div>
-
+    <Footer />
     </>
   )
 }
