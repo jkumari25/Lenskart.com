@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import SideBar from '../../Components/Sidebar/SideBar'
 import TopNav from '../../Componets/Navbar/TopNav'
 import ProductList from '../ProductList/ProductList'
