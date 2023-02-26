@@ -3,29 +3,44 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
 import { useParams } from "react-router-dom"
 import style from "./SingleProductPage.module.css"
-import { Button, ButtonGroup } from '@chakra-ui/react'
+import {  Button,  } from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react'
+import TopNav from '../../Componets/Navbar/TopNav'
+import Footer from "../../Componets/Footer/Footer"
 
 const SingleProductPage = () => {
 
+  const { id } = useParams()
+  const [data, setData] = useState({})
+  const [singleProduct,setSingleProduct] = useState({})
+  const isLoading = useSelector((store) => store.ProductReducer.isLoading)
+  const product = useSelector((store) => store.ProductReducer.product)
   const toast = useToast()
 
-  const { id } = useParams()
+  const handelCart=(item)=>{
+    setSingleProduct(item)
 
-  const product = useSelector((store) => store.product)
-  const [data, setData] = useState({})
+    toast({
+      title: 'Added To Cart.',
+      position: 'top-center',
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+    })
+
+  }
+
+
 
   useEffect(() => {
     let lensData = product.find((el) => el.id === +id)
     lensData && setData(lensData)
   }, [])
-
-console.log(data)
-
-
+console.log(singleProduct)
+// console.log(data+"Single")
   return (
     <>
-
+        <TopNav />
       <div className={style.Single_Product_Page_Main_Container}>
         {/* img  */}
         <div className={style.Single_Product_Page_Img_Main_div}>
@@ -64,22 +79,14 @@ console.log(data)
 
           <div className={style.Single_Product_Page_Add_To_cart_Button_Main_Section}>
 
-            <Button colorScheme='messenger' width="full" onClick={() =>
-              toast({
-                title: 'Added To Cart.',
-                position: 'top-center',
-                status: 'success',
-                duration: 2000,
-                isClosable: true,
-              })
-            }>Add To Cart</Button>
+            <Button colorScheme='messenger' width="full" onClick={() =>handelCart(data)}>Add To Cart</Button>
             <Button colorScheme='pink' variant='solid' width="full">Add To Wishlist</Button>
 
           </div>
 
         </div>
       </div>
-
+    <Footer />
     </>
   )
 }

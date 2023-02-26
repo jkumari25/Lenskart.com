@@ -2,7 +2,7 @@ import React from "react";
 import  './hover.css'
 import { Avatar,Wrap,WrapItem, Image,Heading,Box,Text} from '@chakra-ui/react'
 import { AiOutlineRight } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Hover() {
     const Navigate=useNavigate();
@@ -160,6 +160,7 @@ Navigate("")
             </div>
         </li>
         <li>
+            <Link to="/kids">
             KIDS GLASSES
             <div className='SubMenu_1'>
                 <div className='SubMenu_2'>
@@ -181,8 +182,10 @@ Navigate("")
                     </div>
                 </div>
             </div>
+             </Link>
         </li>
         <li>
+           <Link to="/contact">
             CONTACT LENSES
             <div className='contactGlasses_SubMenu_1'>
                 <div className='contactGlasses_SubMenu_2'>
@@ -243,6 +246,7 @@ Navigate("")
                 </Wrap>
                 </div>
             </div>
+            </Link>
         </li>
         <li>
             SUN GLASSES

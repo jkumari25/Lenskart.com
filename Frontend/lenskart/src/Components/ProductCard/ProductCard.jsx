@@ -7,13 +7,9 @@ import { Link } from 'react-router-dom'
 
 const ProductCard = ({ data }) => {
 
-  // console.log(data);
-
   return (
     <>
-      <Link to={`/products/${data.id}`}>
-     
-
+      <Link to={`/single/${data.id}`}>
         <div className={style.ProductCard_Main_section}>
 
           <div className={style.Product_card_Main_Img_section_Div}>
@@ -41,7 +37,7 @@ const ProductCard = ({ data }) => {
                 <AiFillStar color='#329c92' size="15px" />
               </div>
 
-             
+
             </div>
 
             {/* Product name */}

@@ -38,16 +38,16 @@ const Checkout = () => {
             isClosable: true,
           })
           setopts(false);
-          navigate("/payment");
+          navigate("/address");
     }
     const handleNavi = ()=>{
         if(value){
             toast({
-                title: `Checkout Done`,
+                title: `Guest Login Successfull`,
                 status: 'success',
                 isClosable: true,
               })
-            navigate("/payment");
+            navigate("/address");
             
         }
         else {
@@ -59,6 +59,9 @@ const Checkout = () => {
             setopts(false);
         }
     }
+    const handleMobile = ()=>{
+        navigate("/checkout");
+    }
     const handleAddress = ()=>{
         navigate("/address");
     }
@@ -69,14 +72,14 @@ const Checkout = () => {
     <>
         <Box bg='#363636' w='100%' p={2} color='white' display="flex" justifyContent="center" alignItems="center">
             <Box w="12%" cursor={"pointer"}>
-            <Image src="" w="100%"/>
+                <Image src="" w="100%"/>
             </Box>
         </Box>
 
         <Box style={{display:"flex",height:"auto",width:"85%",margin:"auto"}}>
             <Box style={{flex:"7"}}>
                 <Box id="clip">
-                    <span  style={{color:"#363636", backgroundColor:"rgb(242, 245, 248)"}}><TbCircle1 fontSize="25px"/> Registration & Login</span>
+                    <span onClick={handleMobile} style={{color:"#363636", backgroundColor:"rgb(242, 245, 248)"}}><TbCircle1 fontSize="25px"/>Enter Mobile Numberd</span>
                     <span onClick={handleAddress}><TbCircle2 fontSize="25px"/> Shipping Address</span>
                     <span onClick={handlePayClick}><TbCircle3 fontSize="25px"/> Payment</span>
                 </Box>
