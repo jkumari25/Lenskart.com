@@ -7,6 +7,8 @@ import { CircularProgress } from "react-loading-indicators";
 import { FaAngleRight } from "react-icons/fa";
 import CartNull from "./CartNull";
 import CartCard from './CartCard';
+import TopNav from '../../Componets/Navbar/TopNav';
+import Footer from '../../Componets/Footer/Footer';
 
 const CartItem = () => {
   
@@ -51,6 +53,7 @@ const CartItem = () => {
 
   return (
     <>
+    <TopNav />
      <Box>
       <Flex
         w="80%"
@@ -130,7 +133,7 @@ const CartItem = () => {
         </Box>
       </Flex>
     </Box>
-    
+    <Footer />
     </>
   )
 }

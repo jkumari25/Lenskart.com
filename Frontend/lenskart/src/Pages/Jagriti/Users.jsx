@@ -34,17 +34,20 @@ const User = () => {
   const sidebar = useDisclosure();
   const color = useColorModeValue("grey.600", "grey.300");
 
-    const [data , setData] = useState([])
+    const [data , setData] = useState("");
+    console.log(data);
     const toast = useToast()
     
     useEffect(()=>{
-     getUser()
-    },[])
-
+      getUser()
+     },[])
+      
+  
     const getUser = async()=>{
-      const res = await axios.get("https://silly-tank-top-eel.cyclic.app/user")
+      const res = await axios.get("")
       setData(res.data)
     }
+
     
     const NavItem = (props) => {
     const { icon, children, ...rest } = props;
@@ -227,8 +230,7 @@ const User = () => {
                 "repeat(3, 1fr)",
               ]}
             >
-              {data.length > 0 &&
-                data.reverse().map((item) => (
+              {data.length > 0 && data.map((item) => (
                   <GridItem key={item._id}>
                      
                     <Card maxW="sm">
