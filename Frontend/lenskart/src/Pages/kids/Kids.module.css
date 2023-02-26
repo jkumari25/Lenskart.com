@@ -2,7 +2,7 @@
     /* border: 1px solid black; */
     width: 99%;
     margin: auto;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     height: auto;
     padding: 10px;
     /* background-color: white; */
@@ -27,4 +27,157 @@
 .Kids_SideBar_Product_Main_Container>div:nth-child(2) {
     /* border: 2px solid teal;   */
     width: 79.5%;
+}
+
+
+
+
+/* Resoponsive */
+
+
+/* 769 --- 1024 */
+@media all and (min-width: 769px) and (max-width: 1024px) {
+
+    .Kids_Main_Div {
+        /* border: 1px solid black; */
+        width: 100%;
+        margin: auto;
+        /* margin-top: 20px; */
+        height: auto;
+        padding: 10px;
+        /* background-color: white; */
+        /* color: black; */
+    }
+
+}
+
+
+
+
+/* 425----768 */
+@media all and (min-width: 426px) and (max-width: 768px) {
+
+    /* Kids  */
+
+
+    .Kids_Main_Div {
+        /* border: 1px solid black; */
+        width: 100%;
+        margin: auto;  
+        padding: 7px;
+        /* background-color: white; */
+    }
+    
+    .Kids_SideBar_Product_Main_Container {
+        /* border: 1px solid black; */
+        /* margin-top: 5px; */
+        display: flex;
+        gap: 0px;
+        height: auto;
+        /* padding-top: 10px; */
+    }
+    
+    .Kids_SideBar_Product_Main_Container>div:nth-child(1) {
+        /* border: 2px solid red;   */
+        width: 23%;
+    }
+    
+    
+    .Kids_SideBar_Product_Main_Container>div:nth-child(2) {
+        /* border: 2px solid teal;   */
+        width: 77%;
+    }
+    
+    
+}
+
+
+
+
+/* 375-424 */
+@media all and (min-width: 375px) and (max-width: 425px){
+
+
+    .Kids_Main_Div {
+        /* border: 1px solid black; */
+        width: 100%;
+        margin: auto;
+        /* margin-top: 20px; */
+        height: auto;
+        padding: 5px;
+        /* background-color: white; */
+        /* color: black; */
+    }
+    
+    .Kids_SideBar_Product_Main_Container {
+        /* border: 5px solid black; */
+        /* margin-top: 5px; */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 0px;
+        height: auto;
+        /* padding-top: 10px; */
+    }
+    
+    .Kids_SideBar_Product_Main_Container>div:nth-child(1) {
+        /* border: 2px solid red;   */
+        width: 100%;
+    }
+    
+    
+    .Kids_SideBar_Product_Main_Container>div:nth-child(2) {
+        /* border: 2px solid teal;   */
+        width: 100%;
+    }
+    
+    
+
+
+}
+
+
+/* 320 - 100  */
+@media all and (min-width: 90px) and (max-width: 320px){
+
+
+    .CoolStyle_First_Img_Kids_Section>img{
+        /* border: 1px solid black; */
+        height: 35px;
+    }
+
+
+    .Kids_Main_Div {
+        /* border: 1px solid black; */
+        width: 100%;
+        margin: auto;
+        /* margin-top: 20px; */
+        height: auto;
+        padding: 5px;
+        /* background-color: white; */
+        /* color: black; */
+    }
+    
+    .Kids_SideBar_Product_Main_Container {
+        /* border: 1px solid black; */
+        /* margin-top: 5px; */
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        height: auto;
+        /* padding-top: 10px; */
+    }
+    
+    .Kids_SideBar_Product_Main_Container>div:nth-child(1) {
+        /* border: 2px solid red;   */
+        width: 100%;
+    }
+    
+    
+    .Kids_SideBar_Product_Main_Container>div:nth-child(2) {
+        /* border: 2px solid teal;   */
+        width: 100%
+    }
+    
+    
 }

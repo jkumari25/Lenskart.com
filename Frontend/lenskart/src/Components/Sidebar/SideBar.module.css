@@ -1,4 +1,4 @@
-.SideBar_Main_Container{
+.SideBar_Main_Container {
     /* border: 1px solid black; */
     height: auto;
     border-right: 2px solid #f3f3f3;
@@ -7,27 +7,29 @@
 
 
 /* Age Section CSS */
-.Age_Filter_section{
+.Age_Filter_section {
     margin-bottom: 5px;
+    /* text-align: left; */
     /* border: 1px solid black; */
     /* margin-top: 9px; */
 }
 
-.Age_Filter_section>h1{
+.Age_Filter_section>h1 {
     width: 100%;
+    text-align: left;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 1px;
-    padding: 5px 10px 0 0;
+    padding: 5px 10px 0px 0px;
     margin-bottom: 4px;
     color: #5A5A5A;
     font-family: futurastd-medium;
-    /* margin-top: 10px; */
     /* border: 1px solid black; */
-}    
+    /* margin-top: 10px; */
+}
 
 
-.Age_Filter_section>div{
+.Age_Filter_section>div {
     /* border: 1px solid red; */
     display: flex;
     height: auto;
@@ -38,9 +40,9 @@
     z-index: 99;
     margin-bottom: 3px;
     gap: 10px;
-}    
+}
 
-.Age_Filter_section>div>p{
+.Age_Filter_section>div>p {
     /* border: 1px solid black; */
     color: rgb(146, 146, 146);
     font-style: normal;
@@ -51,7 +53,7 @@
     text-align: initial;
 }
 
-.Age_Filter_section>div>p:hover{
+.Age_Filter_section>div>p:hover {
     color: black;
     cursor: pointer;
 }
@@ -60,26 +62,28 @@
 
 /* Frame Type Css Section */
 
-.Frame_Type_Main_section{
+.Frame_Type_Main_section {
     /* border: 1px solid black; */
-    margin-top:2px;
-    margin-bottom:10px;
+    margin-top: 2px;
+    margin-bottom: 10px;
 }
 
 
-.Frame_Type_Main_section>h1{
+.Frame_Type_Main_section>h1 {
     width: 100%;
+    text-align: left;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 1px;
-    padding: 5px 10px 0 0;
+    padding: 5px 10px 0px 0px;
     margin-bottom: 4px;
     color: #5A5A5A;
     font-family: futurastd-medium;
+    /* border: 1px solid black; */
 }
 
 
-.Frame_Type_Main_section_Main_Div_IMG{
+.Frame_Type_Main_section_Main_Div_IMG {
     width: 25%;
     opacity: .5;
     border: 1px solid #cdcdcd;
@@ -91,25 +95,25 @@
     /* border: 1px solid black; */
 }
 
-.Frame_Type_Main_section_Main_Div_IMG:hover{
+.Frame_Type_Main_section_Main_Div_IMG:hover {
     cursor: pointer;
     border: 1px solid black;
 }
 
-.Frame_Type_Main_section_Main_Div_IMG>img{
+.Frame_Type_Main_section_Main_Div_IMG>img {
     /* border: 1px solid black; */
     width: 85%;
     margin: auto;
 }
 
-.Frame_Type_Main_section_Main_Div_IMG>h4{
+.Frame_Type_Main_section_Main_Div_IMG>h4 {
     min-width: 65px;
     color: #2a2a2a;
     line-height: 10px;
     letter-spacing: 1px;
     overflow: hidden;
     font-size: 13px;
-    text-transform: capitalize!important;
+    text-transform: capitalize !important;
     padding-top: 2px;
     padding-bottom: 2px;
     margin-bottom: 5px;
@@ -119,14 +123,15 @@
 
 /* Frame Shape Section  */
 
-.Frame_Shape_Main_section{
+.Frame_Shape_Main_section {
     /* border: 1px solid black; */
-    margin-top:2px;
-    margin-bottom:15px;
+    margin-top: 2px;
+    margin-bottom: 15px;
 }
 
-.Frame_Shape_Main_section>h1{
+.Frame_Shape_Main_section>h1 {
     width: 100%;
+    text-align: left;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -137,17 +142,17 @@
 }
 
 
-.Frame_Shape_Main_section__Main_DIV_Img{
-    
+.Frame_Shape_Main_section__Main_DIV_Img {
+
     /* border: 1px solid black; */
     width: 90%;
     display: grid;
     /* padding-left: 18px; */
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.Frame_Shape_Main_section_IMG{
-    
+.Frame_Shape_Main_section_IMG {
+
     /* border: 1px solid black; */
     width: 85%;
     /* padding-left: 5px; */
@@ -159,25 +164,25 @@
     text-align: center;
 }
 
-.Frame_Shape_Main_section_IMG:hover{
+.Frame_Shape_Main_section_IMG:hover {
     cursor: pointer;
     border: 1px solid black;
 }
 
-.Frame_Shape_Main_section_IMG>img{
+.Frame_Shape_Main_section_IMG>img {
     /* border: 1px solid black; */
     width: 85%;
     margin: auto;
 }
 
-.Frame_Shape_Main_section_IMG>h4{
+.Frame_Shape_Main_section_IMG>h4 {
     min-width: 65px;
     color: #2a2a2a;
     line-height: 13px;
     letter-spacing: 1px;
     overflow: hidden;
     font-size: 12.5px;
-    text-transform: capitalize!important;
+    text-transform: capitalize !important;
     padding-top: 2px;
     padding-bottom: 2px;
     margin-bottom: 5px;
@@ -187,7 +192,7 @@
 
 /* Frame Color  */
 
-.Frame_Color_section_heading{
+.Frame_Color_section_heading {
     /* border: 1px solid black; */
     width: 100%;
     font-size: 15px;
@@ -201,7 +206,7 @@
     font-family: futurastd-medium;
 }
 
-.Frame_Color_section_Inside_FilterS_By_Color{
+.Frame_Color_section_Inside_FilterS_By_Color {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
@@ -209,7 +214,7 @@
 
 
 
-.Frame_Color_section_Inside_FilterS_By_Color>h3{
+.Frame_Color_section_Inside_FilterS_By_Color>h3 {
     color: rgb(150, 149, 149);
 }
 
@@ -217,7 +222,7 @@
 
 /* Brands */
 
-.Frame_Color_section_Inside_FilterS_By_Brands{
+.Frame_Color_section_Inside_FilterS_By_Brands {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
@@ -229,7 +234,7 @@
 
 /* Frame Size  */
 
-.Frame_Color_section_Inside_FilterS_By_Size{
+.Frame_Color_section_Inside_FilterS_By_Size {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
@@ -240,7 +245,7 @@
 
 /* Price  */
 
-.Frame_Color_section_Inside_FilterS_By_Price{
+.Frame_Color_section_Inside_FilterS_By_Price {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
@@ -251,7 +256,7 @@
 
 /* Gender */
 
-.Frame_Color_section_Inside_FilterS_By_Gender{
+.Frame_Color_section_Inside_FilterS_By_Gender {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
@@ -260,7 +265,7 @@
 
 /* material */
 
-.Frame_Color_section_Inside_FilterS_By_Material{
+.Frame_Color_section_Inside_FilterS_By_Material {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
@@ -269,7 +274,7 @@
 
 /* Weight Group */
 
-.Frame_Color_section_Inside_FilterS_By_Weight{
+.Frame_Color_section_Inside_FilterS_By_Weight {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
@@ -279,7 +284,7 @@
 
 /* Prescription Type */
 
-.Frame_Color_section_Inside_FilterS_By_Prescription_Type{
+.Frame_Color_section_Inside_FilterS_By_Prescription_Type {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
@@ -288,7 +293,7 @@
 
 
 /* Supported power */
-.Frame_Color_section_Inside_FilterS_By_Supported_Power{
+.Frame_Color_section_Inside_FilterS_By_Supported_Power {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
@@ -297,7 +302,7 @@
 
 
 /* Collection  */
-.Frame_Color_section_Inside_FilterS_By_Collection{
+.Frame_Color_section_Inside_FilterS_By_Collection {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
@@ -306,7 +311,7 @@
 
 /* Glass Color */
 
-.Frame_Color_section_Inside_FilterS_By_Glass_Color{
+.Frame_Color_section_Inside_FilterS_By_Glass_Color {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
@@ -314,9 +319,946 @@
 }
 
 /* Frame Width */
-.Frame_Color_section_Inside_FilterS_By_Frame_Width{
+.Frame_Color_section_Inside_FilterS_By_Frame_Width {
     border-bottom: 1px solid rgb(233, 231, 231);
     display: flex;
     gap: 9px;
     color: rgb(150, 149, 149);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Resopnsive */
+
+/* 769----1024 */
+@media all and (min-width: 769px) and (max-width: 1024px) {
+
+
+    /* Frame Type Css Section */
+    .Frame_Type_Main_section_Main_Div_IMG {
+        width: 28%;
+        /* border: 1px solid black; */
+    }
+
+
+    .Frame_Type_Main_section_Main_Div_IMG>h4 {
+        /* min-width: 65px; */
+        color: #2a2a2a;
+        line-height: 10px;
+        letter-spacing: 0.1px;
+        font-size: 11px;
+        /* border: 1px solid black; */
+    }
+
+    /* Frame Shape */
+
+
+    .Frame_Shape_Main_section_IMG {
+
+        width: 87%;
+        /* padding-left: 5px; */
+        /* border: 1px solid black; */
+    }
+
+
+
+    .Frame_Shape_Main_section_IMG>h4 {
+        /* min-width: 65px; */
+        color: #2a2a2a;
+        line-height: 13px;
+        letter-spacing: 0.05px;
+        overflow: hidden;
+        font-size: 11px;
+        margin-left: -5px;
+        /* border: 1px solid black; */
+    }
+
+}
+
+
+/* 425----768 */
+@media all and (min-width: 425px) and (max-width: 768px) {
+
+
+    
+    /* Age Section CSS */
+    
+    
+    .Age_Filter_section>h1 {
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 5px 10px 0px 0px;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        font-family: futurastd-medium;
+        /* border: 1px solid black; */
+        /* margin-top: 10px; */
+    }
+    
+    
+    .Age_Filter_section>div {
+        /* border: 1px solid red; */
+        display: flex;
+        height: auto;
+        align-items: center;
+        padding-left: 5px;
+        padding-top: 2px;
+        margin-left: 0;
+        z-index: 99;
+        margin-bottom: 3px;
+        gap: 10px;
+    }
+    
+    .Age_Filter_section>div>p {
+        /* border: 1px solid black; */
+        color: rgb(146, 146, 146);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 23px;
+        font-family: "Mier book";
+        text-align: initial;
+    }
+    
+    .Age_Filter_section>div>p:hover {
+        color: black;
+        cursor: pointer;
+    }
+    
+    
+    
+    /* Frame Type Css Section */
+    
+    .Frame_Type_Main_section {
+        /* border: 1px solid black; */
+        margin-top: 2px;
+        margin-bottom: 10px;
+    }
+    
+    
+    .Frame_Type_Main_section>h1 {
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 5px 10px 0px 0px;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        font-family: futurastd-medium;
+        /* border: 1px solid black; */
+    }
+    
+    
+    .Frame_Type_Main_section_Main_Div_IMG {
+        width: 30%;
+        opacity: .5;
+        border: 1px solid #cdcdcd;
+        white-space: nowrap;
+        /* margin-left: 20px; */
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+        /* border: 1px solid black; */
+    }
+    
+    .Frame_Type_Main_section_Main_Div_IMG:hover {
+        cursor: pointer;
+        border: 1px solid black;
+    }
+    
+    .Frame_Type_Main_section_Main_Div_IMG>img {
+        /* border: 1px solid black; */
+        width: 85%;
+        margin: auto;
+    }
+    
+    .Frame_Type_Main_section_Main_Div_IMG>h4 {
+        /* min-width: 65px; */
+        color: #2a2a2a;
+        line-height: 10px;
+        letter-spacing: 0.2px;
+        overflow: hidden;
+        font-size: 11px;
+        text-transform: capitalize !important;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        margin-bottom: 5px;
+        margin-left: -10px;
+    }
+    
+    
+    
+    /* Frame Shape Section  */
+    
+    .Frame_Shape_Main_section {
+        /* border: 1px solid black; */
+        margin-top: 2px;
+        margin-bottom: 15px;
+    }
+    
+    .Frame_Shape_Main_section>h1 {
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 5px 10px 0 0;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        font-family: futurastd-medium;
+    }
+    
+    
+    .Frame_Shape_Main_section__Main_DIV_Img {
+    
+        /* border: 1px solid black; */
+        width: 90%;
+        display: grid;
+        /* gap: 5px; */
+        /* padding-left: 18px; */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .Frame_Color_section_heading {
+        /* border: 1px solid black; */
+        width: 100%;
+        font-size: 14px;
+        text-align: left;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        padding: 5px 10px 0 0;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        margin-left: -12px;
+        font-family: futurastd-medium;
+    }
+    
+    
+    
+
+
+}
+
+
+/* 375-424 */
+@media all and (min-width: 375px) and (max-width: 425px){
+
+
+    .SideBar_Main_Container {
+        /* border: 1px solid black; */
+        height: auto;
+        border-right: 2px solid #f3f3f3;
+        /* margin-top: 5px; */
+    }
+    
+    
+    /* Age Section CSS */
+    .Age_Filter_section {
+
+        display: flex;
+        text-align: center;
+        margin-bottom: 5px;
+        /* text-align: left; */
+        /* border: 1px solid black; */
+        /* margin-top: 9px; */
+    }
+    
+    .Age_Filter_section>h1 {
+        width: 18%;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 5px 10px 0px 0px;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        font-family: futurastd-medium;
+        /* border: 1px solid black; */
+        /* margin-top: 10px; */
+    }
+    
+    
+    .Age_Filter_section>div {
+        /* border: 1px solid red; */
+        display: flex;
+        height: auto;
+        align-items: center;
+        padding-left: 5px;
+        padding-top: 2px;
+        z-index: 99;
+        margin-bottom: 3px;
+        gap: 5px;
+    }
+    
+    .Age_Filter_section>div>p {
+        /* border: 1px solid black; */
+        color: rgb(146, 146, 146);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 23px;
+        font-family: "Mier book";
+        text-align: initial;
+    }
+    
+    .Age_Filter_section>div>p:hover {
+        color: black;
+        cursor: pointer;
+    }
+    
+    
+    
+    /* Frame Type Css Section */
+    
+    .Frame_Type_Main_section {
+        border: 1px solid black;
+       display: none;
+    }
+    
+    
+    
+    
+    /* Frame Shape Section  */
+    
+    .Frame_Shape_Main_section {
+        border: 1px solid black;
+        display: none;
+    }
+    
+    
+    /* Frame Color  */
+    
+    .Frame_Color_section_heading {
+        /* border: 1px solid black; */
+        width: 100%;
+        font-size: 15px;
+        text-align: left;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 5px 10px 0 0;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        margin-left: -12px;
+        font-family: futurastd-medium;
+    }
+    
+    .Frame_Color_section_Inside_FilterS_By_Color {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+    }
+    
+    
+    
+    .Frame_Color_section_Inside_FilterS_By_Color>h3 {
+        color: rgb(150, 149, 149);
+    }
+    
+    
+    
+    /* Brands */
+    
+    .Frame_Color_section_Inside_FilterS_By_Brands {
+        border-bottom: 1px solid rgb(233, 231, 231);
+       display: none;
+        /* border: 1px solid black; */
+    }
+    
+    
+    
+    
+    /* Frame Size  */
+    
+    .Frame_Color_section_Inside_FilterS_By_Size {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+  .Brands_Main_section{
+    /* border: 1px solid black; */
+    display: none;
+  }  
+
+  .Price_Main_section{
+    display: none;
+  }
+
+  .Frame_Color_Main_section{
+    display: none;
+  }
+
+
+  .Gender_Main_section{
+    display: none;
+  }
+
+  .Material_Main_section{
+    display: none;
+  }
+
+  .Weight_Main_section{
+    display: none;
+  }
+
+  .Prescription_Main_section{
+    display: none;
+  }
+
+  .Supported_Main_section{
+    display: none;
+  }
+
+  .Collection_Main_section{
+    display: none;
+  }
+
+  .Glass_Color_Main_section{
+    display: none;
+  }
+
+  ._Main_section{
+    display: none;
+  }
+
+}
+
+/* 320 -374  */
+@media all and (min-width: 320px) and (max-width: 375px){
+
+
+    .SideBar_Main_Container {
+        /* border: 1px solid black; */
+        height: auto;
+        border-right: 2px solid #f3f3f3;
+        /* margin-top: 5px; */
+    }
+    
+    
+    /* Age Section CSS */
+    .Age_Filter_section {
+
+        display: flex;
+        text-align: center;
+        margin-bottom: 5px;
+        /* text-align: left; */
+        /* border: 1px solid black; */
+        /* margin-top: 9px; */
+    }
+    
+    .Age_Filter_section>h1 {
+        width: 19%;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 5px 10px 0px 0px;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        font-family: futurastd-medium;
+        /* border: 1px solid black; */
+        /* margin-top: 10px; */
+    }
+    
+    
+    .Age_Filter_section>div {
+        /* border: 1px solid red; */
+        display: flex;
+        height: auto;
+        align-items: center;
+        padding-left: 5px;
+        padding-top: 2px;
+        z-index: 99;
+        margin-bottom: 3px;
+        gap: 5px;
+    }
+    
+    .Age_Filter_section>div>p {
+        /* border: 1px solid black; */
+        color: rgb(146, 146, 146);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 23px;
+        font-family: "Mier book";
+        text-align: initial;
+    }
+    
+    .Age_Filter_section>div>p:hover {
+        color: black;
+        cursor: pointer;
+    }
+    
+    
+    
+    /* Frame Type Css Section */
+    
+    .Frame_Type_Main_section {
+        border: 1px solid black;
+       display: none;
+    }
+    
+    
+    
+    
+    /* Frame Shape Section  */
+    
+    .Frame_Shape_Main_section {
+        border: 1px solid black;
+        display: none;
+    }
+    
+    
+    /* Frame Color  */
+    
+    .Frame_Color_section_heading {
+        /* border: 1px solid black; */
+        width: 100%;
+        font-size: 14px;
+        text-align: left;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        padding: 5px 10px 0 0;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        margin-left: -12px;
+        font-family: futurastd-medium;
+    }
+    
+    .Frame_Color_section_Inside_FilterS_By_Color {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+    }
+    
+    
+    
+    .Frame_Color_section_Inside_FilterS_By_Color>h3 {
+        color: rgb(150, 149, 149);
+    }
+    
+    
+    
+    /* Brands */
+    
+    .Frame_Color_section_Inside_FilterS_By_Brands {
+        border-bottom: 1px solid rgb(233, 231, 231);
+       display: none;
+        /* border: 1px solid black; */
+    }
+    
+    
+    
+    
+    /* Frame Size  */
+    
+    .Frame_Color_section_Inside_FilterS_By_Size {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+  .Brands_Main_section{
+    /* border: 1px solid black; */
+    display: none;
+  }  
+
+  .Price_Main_section{
+    display: none;
+  }
+
+  .Frame_Color_Main_section{
+    display: none;
+  }
+
+
+  .Gender_Main_section{
+    display: none;
+  }
+
+  .Material_Main_section{
+    display: none;
+  }
+
+  .Weight_Main_section{
+    display: none;
+  }
+
+  .Prescription_Main_section{
+    display: none;
+  }
+
+  .Supported_Main_section{
+    display: none;
+  }
+
+  .Collection_Main_section{
+    display: none;
+  }
+
+  .Glass_Color_Main_section{
+    display: none;
+  }
+
+  ._Main_section{
+    display: none;
+  }
+
+
+}
+
+
+
+/* 320 - 100  */
+@media all and (min-width: 90px) and (max-width: 320px){
+    .SideBar_Main_Container {
+        /* border: 1px solid black; */
+        height: auto;
+        border-right: 2px solid #f3f3f3;
+        /* margin-top: 5px; */
+    }
+    
+    
+    /* Age Section CSS */
+    .Age_Filter_section {
+        margin-bottom: 0px;
+        /* text-align: left; */
+        /* border: 1px solid black; */
+        /* margin-top: 9px; */
+    }
+    
+    .Age_Filter_section>h1 {
+        width: 19%;
+        text-align: left;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 5px 10px 0px 0px;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        font-family: futurastd-medium;
+        /* border: 1px solid black; */
+        /* margin-top: 10px; */
+    }
+    
+    
+    .Age_Filter_section>div {
+        /* border: 1px solid red; */
+        display: flex;
+        height: auto;
+        align-items: center;
+        padding-left: 5px;
+        padding-top: 2px;
+        margin-left: 0;
+        z-index: 9;
+        margin-bottom: 3px;
+        gap: 5px;
+    }
+    
+    .Age_Filter_section>div>p {
+        /* border: 1px solid black; */
+        color: rgb(146, 146, 146);
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12.5px;
+        line-height: 20px;
+        font-family: "Mier book";
+        text-align: initial;
+    }
+    
+    .Age_Filter_section>div>p:hover {
+        color: black;
+        cursor: pointer;
+    }
+    
+    
+    
+    /* Frame Type Css Section */
+    
+    .Frame_Type_Main_section {
+        /* border: 1px solid black; */
+        margin-top: 2px;
+        margin-bottom: 10px;
+    }
+    
+    
+    .Frame_Type_Main_section>h1 {
+        width: 100%;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 5px 10px 0px 0px;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        font-family: futurastd-medium;
+        /* border: 1px solid black; */
+    }
+    
+    
+    .Frame_Type_Main_section_Main_Div_IMG {
+        width: 25%;
+        opacity: .5;
+        border: 1px solid #cdcdcd;
+        white-space: nowrap;
+        /* margin-left: 20px; */
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+        /* border: 1px solid black; */
+    }
+    
+    .Frame_Type_Main_section_Main_Div_IMG:hover {
+        cursor: pointer;
+        border: 1px solid black;
+    }
+    
+    .Frame_Type_Main_section_Main_Div_IMG>img {
+        /* border: 1px solid black; */
+        width: 85%;
+        margin: auto;
+    }
+    
+    .Frame_Type_Main_section_Main_Div_IMG>h4 {
+        min-width: 65px;
+        color: #2a2a2a;
+        line-height: 10px;
+        letter-spacing: 1px;
+        overflow: hidden;
+        font-size: 13px;
+        text-transform: capitalize !important;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        margin-bottom: 5px;
+    }
+    
+    
+    
+    /* Frame Shape Section  */
+    
+    .Frame_Shape_Main_section {
+        /* border: 1px solid black; */
+        margin-top: 2px;
+        margin-bottom: 10px;
+    }
+    
+    .Frame_Shape_Main_section>h1 {
+        width: 100%;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 5px 10px 0 0;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        font-family: futurastd-medium;
+    }
+    
+    
+    .Frame_Shape_Main_section__Main_DIV_Img {
+    
+        /* border: 1px solid black; */
+        width: 90%;
+        display: grid;
+        /* padding-left: 18px; */
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .Frame_Shape_Main_section_IMG {
+    
+        /* border: 1px solid black; */
+        width: 85%;
+        /* padding-left: 5px; */
+        opacity: .5;
+        border: 1px solid #cdcdcd;
+        white-space: nowrap;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    
+    .Frame_Shape_Main_section_IMG:hover {
+        cursor: pointer;
+        border: 1px solid black;
+    }
+    
+    .Frame_Shape_Main_section_IMG>img {
+        /* border: 1px solid black; */
+        width: 85%;
+        margin: auto;
+    }
+    
+    .Frame_Shape_Main_section_IMG>h4 {
+        min-width: 65px;
+        color: #2a2a2a;
+        line-height: 13px;
+        letter-spacing: 1px;
+        overflow: hidden;
+        font-size: 12.5px;
+        text-transform: capitalize !important;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        margin-bottom: 5px;
+    }
+    
+    
+    
+    /* Frame Color  */
+    
+    .Frame_Color_section_heading {
+        /* border: 1px solid black; */
+        width: 100%;
+        font-size: 15px;
+        text-align: left;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 5px 10px 0 0;
+        margin-bottom: 4px;
+        color: #5A5A5A;
+        margin-left: -12px;
+        font-family: futurastd-medium;
+    }
+    
+    .Frame_Color_section_Inside_FilterS_By_Color {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+    }
+    
+    
+    
+    .Frame_Color_section_Inside_FilterS_By_Color>h3 {
+        color: rgb(150, 149, 149);
+    }
+    
+    
+    
+    /* Brands */
+    
+    .Frame_Color_section_Inside_FilterS_By_Brands {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+    
+    
+    
+    /* Frame Size  */
+    
+    .Frame_Color_section_Inside_FilterS_By_Size {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+    
+    
+    /* Price  */
+    
+    .Frame_Color_section_Inside_FilterS_By_Price {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+    
+    
+    /* Gender */
+    
+    .Frame_Color_section_Inside_FilterS_By_Gender {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+    /* material */
+    
+    .Frame_Color_section_Inside_FilterS_By_Material {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+    /* Weight Group */
+    
+    .Frame_Color_section_Inside_FilterS_By_Weight {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+    
+    /* Prescription Type */
+    
+    .Frame_Color_section_Inside_FilterS_By_Prescription_Type {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+    
+    /* Supported power */
+    .Frame_Color_section_Inside_FilterS_By_Supported_Power {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+    
+    /* Collection  */
+    .Frame_Color_section_Inside_FilterS_By_Collection {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+    /* Glass Color */
+    
+    .Frame_Color_section_Inside_FilterS_By_Glass_Color {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+    /* Frame Width */
+    .Frame_Color_section_Inside_FilterS_By_Frame_Width {
+        border-bottom: 1px solid rgb(233, 231, 231);
+        display: flex;
+        gap: 9px;
+        color: rgb(150, 149, 149);
+    }
+    
+
+
+
 }

@@ -9,6 +9,7 @@
     justify-content:center;
     align-items:center;
     /* background-color: aqua; */
+    /* border: 1px solid black; */
 }
 .MainMenu ul{
     color: #000042;
@@ -19,19 +20,22 @@
     justify-content: space-evenly;
     margin: auto; 
     margin-left: 40PX;
-    font-weight:540;    
+    font-weight:540;   
+    /* border: 1px solid black;  */
 }
 .MainMenu ul li{
     margin: 0px 8px;
-    padding-bottom: 15px;
+    /* padding-bottom: 15px; */
     font-size: 90%;
     cursor: pointer;
     font-family:Arial, Helvetica, sans-serif;
+    /* border: 1px solid teal; */
 }
 .MainMenu>ul>li:hover{
     color: black;
     padding-bottom: 13px;
     border-bottom: solid 2px black;
+    /* border: 5px solid black; */
 }
 .SubMenu_1{
    display: none;  
@@ -48,20 +52,24 @@
     font-weight: lighter;
     justify-content: space-between;
     /* background-color: red; */
+    /* border: 5px solid black; */
  }
  .SubMenu_3{
-    height: 100%;
+    height: auto;
     margin: auto;  
-    /* width:90%; */
+    width:90%;
+    /* border: 1px solid black; */
     /* background-color: aqua; */
  }
 .MainMenu>ul>li:hover .SubMenu_1{
    display: block;
    position:absolute;
    top:25px;
-   width:150%;
-   height:300px;margin-top: 16px;
+   width:100%;
+   height:auto;
+   margin-top: 16px;
    /* background-color: aqua;   */
+   /* border: 5px solid red; */
 }
 .Men_menu{
     margin-top: 32px;
@@ -226,6 +234,7 @@
     background-color:#FBF9F7; 
     height: 250px;
     width: 240px;
+    /* border: 5px solid teal; */
 }
 .image_1>div{
     color: #CCCCCC;
@@ -299,22 +308,24 @@
 .MainMenu>ul>li:hover .contactGlasses_SubMenu_1{
     display: block;
     position:absolute;
-    top:40px;
-    width:150%;
-    /* height:300px; */
+    top:20px;
+    width:155%;
+    height:380px;
     margin-top: 16px;
-    margin-left: -420px;
-    /* background-color: aqua;   */
+    margin-left: -46%;
+    background-color: antiquewhite;  
+    /* border: 5px solid black; */
  }
  .contactGlasses_SubMenu_3{
-     height: 80%;
+     height: auto;
      margin: auto;  
+     /* border: 5px solid black; */
      /* width:90%; */
      /* margin-left: -420px; */
-     /* background-color: yellowgreen; */
+     background-color: rgb(243, 234, 239);
  }
  .contactGlasses_nextPara_1{
-    color: #CCCCCC;
+    color: #7c7b7b;
     margin-top: 10px;
     margin-left: 4.5%;
     font-size:small;
@@ -327,9 +338,10 @@
 }
 .contactGlasses_nextPara_1>div:hover{
     color: #000042;
+    /* background-color: black; */
 }
 .contactGlasses_nextPara_2{
-    color: #CCCCCC;
+    color: #7c7b7b;
     margin-top: -16%;
     margin-left: 19%;
     font-size:small;
@@ -344,7 +356,7 @@
     color: #000042;
 }
 .contactGlasses_nextPara_3{
-    color: #CCCCCC;
+    color: #7c7b7b;
     margin-top: -25.8%;
     margin-left: 37%;
     font-size:small;
@@ -359,7 +371,7 @@
     color: #000042;
 }
 .contactGlasses_nextPara_4{
-    color: #CCCCCC;
+    color: #7c7b7b;
     margin-top: -36.6%;
     margin-left: 55%;
     font-size:small;
@@ -374,7 +386,7 @@
     color: #000042;
 }
 .contactGlasses_nextPara_5{
-    color: #CCCCCC;
+    color: #7c7b7b;
     margin-top: -45.2%;
     margin-left: 72%;
     font-size:small;
@@ -391,14 +403,14 @@
 .hr_Line{
     border-bottom: 2px solid #CCCCCC;
     height: 5px;
-    width: 85%;
-    margin-left: 18.5%;
+    width: 100%;
+    margin-left: 0%;
 }
 .hr_Line2   {
     border-bottom: 2px solid #CCCCCC;
     height: 5px;
     width: 80%;
-    margin-left: 17%;
+    margin-left: 0%;
 }
 .hr_Line3{
     border-bottom: 2px solid #CCCCCC;
@@ -409,8 +421,8 @@
 .hr_Line4{
     border-bottom: 2px solid #CCCCCC;
     height: 5px;
-    width: 83%;
-    margin-left: -20%;
+    width: 100%;
+    margin-left: 0%;
 }
 
 .sunGlasses_SubMenu_1{
@@ -422,7 +434,7 @@
      margin: auto;
      display: flex;
      margin-top: 15px;
-     margin-left: -550px;
+     margin-left: 0px;
      padding-top: 12px;
      padding-left: 265px;
      padding-right: 40px;
@@ -434,18 +446,19 @@
      height: 80%;
      width:100%;
      margin: auto; 
-     margin-left: -550px; 
-     /* background-color: pink; */
-  }
+     margin-left: 0px; 
+     background-color: rgb(255, 255, 255);
+    /* border: 5px solid black; */
+    }
  .MainMenu>ul>li:hover .sunGlasses_SubMenu_1{
     display: block;
     position:absolute;
-    top:40px;
-    width:150%;
-    height:300px;
+    top:20px;
+    width:158%;
+    height:370px;
     margin-top: 16px;
-    /* margin-left: -500px; */
-    /* background-color: aqua;   */
+    margin-left: -550px;
+    background-color: rgb(243, 243, 243);  
  }
  .sunGlasses_Men_menu{
      margin-top: 32px;
@@ -558,17 +571,18 @@
     display: block;
     position:absolute;
     top:50px;
-    width:153%;
-    height:418px;
-    margin-left: -70%;
-    /* background-color: aqua;   */
+    width:155%;
+    height:400px;
+    margin-left: -73%;
+    background-color: aqua; 
+    /* border: 5px solid black;  */
  }
  .eyeText_mainMenu_1{
     display: flex;
     height: 100%;
     width:100%;
     /* flex-direction: row; */
-    /* background-color: pink; */
+    background-color: pink;
  }
  .eyeText_SubMenu_1{
      height: 100%;
@@ -604,10 +618,10 @@
     display: block;
     position:absolute;
     top:50px;
-    width:153%;
+    width:155%;
     height:418px;
-    margin-left: -84.5%;
-    /* background-color: aqua;   */
+    margin-left: -87%;
+    background-color: rgb(158, 255, 239);  
  }
  .store_mainMenu_1{
      display: flex;   
@@ -642,6 +656,10 @@
     color: #FFFFFF;
     background-color: #000042;
 }
+
+
+
+
  @media screen and (max-width:1040px) {
     .MainMenu{
         display:none;
@@ -649,8 +667,12 @@
     } 
 }
 
+
+
 .SubMenu_1,.contactGlasses_SubMenu_1{
 
 
     background-color: white !important;
 } 
+
+

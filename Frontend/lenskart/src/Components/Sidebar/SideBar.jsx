@@ -72,14 +72,14 @@ const SideBar = () => {
 
           <div onChange={handelSort}>
             <input type="radio" name='sort_by' value={"asc"}  defaultChecked={order==="asc"} />
-            <p>Price : Low to Heigh</p>
+            <p>Price : Low to High</p>
           </div>
 
 
 
           <div onChange={handelSort}>
             <input type="radio" name='sort_by' value={"desc"} defaultChecked={order==="desc"} />
-            <p>Price : Hight to Low</p>
+            <p>Price : High to Low</p>
           </div>
 
 
@@ -194,6 +194,87 @@ const SideBar = () => {
         </div>
 
 
+        {/* BRANDS  */}
+
+        <div className={style.Brands_Main_section}>
+
+
+          <Accordion allowMultiple>
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box as="span" flex='1' textAlign='left'>
+                    <h1 className={style.Frame_Color_section_heading}> BRANDS</h1>
+                  </Box>
+                  <AccordionIcon color="gray.600" />
+                </AccordionButton>
+              </h2>
+
+              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Brands}>
+                <input type="checkbox" />
+                <h1>HOOPER(200)</h1>
+              </AccordionPanel>
+
+              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Brands}>
+                <input type="checkbox" />
+                <h1>HOOPER SWITCH</h1>
+              </AccordionPanel>
+
+
+            </AccordionItem>
+
+
+          </Accordion>
+
+        </div>
+
+
+
+
+
+        {/* PRICE  */}
+
+
+        <div className={style.Price_Main_section}>
+
+
+          <Accordion allowMultiple>
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box as="span" flex='1' textAlign='left'>
+                    <h1 className={style.Frame_Color_section_heading}> PRICE </h1>
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+
+              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Price}>
+                <input type="checkbox" />
+                <h1>RS. 500 - RS. 999(195)</h1>
+              </AccordionPanel>
+
+              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Price}>
+                <input type="checkbox" />
+                <h1>RS. 1500 - RS. 1999(58)</h1>
+              </AccordionPanel>
+
+
+
+
+              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Price}>
+                <input type="checkbox" />
+                <h1>RS. 2500 - RS. 2999(5)</h1>
+              </AccordionPanel>
+
+
+            </AccordionItem>
+
+
+          </Accordion>
+
+        </div>
+
 
 
         {/* FRAME COLOR  */}
@@ -277,87 +358,6 @@ const SideBar = () => {
 
         </div>
 
-
-        {/* BRANDS  */}
-
-        <div className={style.Brands_Main_section}>
-
-
-          <Accordion allowMultiple>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box as="span" flex='1' textAlign='left'>
-                    <h1 className={style.Frame_Color_section_heading}> BRANDS</h1>
-                  </Box>
-                  <AccordionIcon color="gray.600" />
-                </AccordionButton>
-              </h2>
-
-              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Brands}>
-                <input type="checkbox" />
-                <h1>HOOPER(200)</h1>
-              </AccordionPanel>
-
-              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Brands}>
-                <input type="checkbox" />
-                <h1>HOOPER SWITCH</h1>
-              </AccordionPanel>
-
-
-            </AccordionItem>
-
-
-          </Accordion>
-
-        </div>
-
-
-
-
-
-        {/* PRICE  */}
-
-
-        <div className={style.Price_Main_section}>
-
-
-          <Accordion allowMultiple>
-            <AccordionItem>
-              <h2>
-                <AccordionButton>
-                  <Box as="span" flex='1' textAlign='left'>
-                    <h1 className={style.Frame_Color_section_heading}> PRICE </h1>
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-
-              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Price}>
-                <input type="checkbox" />
-                <h1>RS. 500 - RS. 999(195)</h1>
-              </AccordionPanel>
-
-              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Price}>
-                <input type="checkbox" />
-                <h1>RS. 1500 - RS. 1999(58)</h1>
-              </AccordionPanel>
-
-
-
-
-              <AccordionPanel pb={4} className={style.Frame_Color_section_Inside_FilterS_By_Price}>
-                <input type="checkbox" />
-                <h1>RS. 2500 - RS. 2999(5)</h1>
-              </AccordionPanel>
-
-
-            </AccordionItem>
-
-
-          </Accordion>
-
-        </div>
 
 
 
