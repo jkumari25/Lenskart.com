@@ -30,6 +30,7 @@ background-color: white
 
 #parent-grid{
 display: flex;
+margin:auto;
 padding: 10px;;
 padding-top: 20px;
 gap:10px;

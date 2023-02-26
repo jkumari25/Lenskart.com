@@ -224,7 +224,7 @@
 }
 .image_1{
     background-color:#FBF9F7; 
-    height: 250px;
+    height: 200px;
     width: 240px;
 }
 .image_1>div{
@@ -242,7 +242,7 @@
 }
 .image_2{
     background-color:#FBF9F7; 
-    height: 250px;
+    height: 200px;
     width: 240px;
     margin-left: 85px;
 }
@@ -260,13 +260,13 @@
     text-align: center;
 }
 .image_3{
-    background-color:#FBF9F7; 
-    height: 250px;
+    /* background-color:#FBF9F7;  */
+    height: 200px;
     width: 240px;
     margin-left: 85px;
 }
 .image_3>div{
-    color: #CCCCCC;
+    /* color: #CCCCCC; */
     margin-top: 10px;
     text-align: center;
     font-size: medium;
