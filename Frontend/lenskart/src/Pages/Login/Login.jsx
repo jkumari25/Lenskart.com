@@ -1,7 +1,8 @@
 import React from "react";
-import { useState } from "react";
+import { useState} from "react";
 import { AuthContext } from "../../ContextApi/AuthContext";
 import { useContext } from "react";
+import { useDispatch } from 'react-redux'
 
 import {
   Modal,
@@ -23,16 +24,23 @@ import { Checkbox } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
 import Required from "./Required";
 import { useDisclosure } from "@chakra-ui/react";
+import { Navigate, useNavigate } from "react-router-dom";
+import { addName } from "../../Redux/AuthRedux/action";
 
 const Login = (props) => {
   const [loading, setLoading] = useState(false);
   const [butn, setbutn] = useState();
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [pass, setpass] = useState(false);
+  const [email, setemail] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuth, setisAuth, Authdata, setAuthData } = useContext(AuthContext);
   const [resdata, setResdata] = useState([]);
   const [incorrect, setinCorrect] = useState(false);
+  const navigate=useNavigate();
+
+  const dispatch=useDispatch()
+
 
   const handlechange = (e) => {
     const { name, value } = e.target;
@@ -52,28 +60,63 @@ const Login = (props) => {
     setbutn(buton);
   };
   let loData1 = [];
-  const getData = () => {
-    setLoading(true);
-    fetch(`https://silly-tank-top-eel.cyclic.app/user`)
-      .then((res) => res.json())
-      .then((res) => {
-        loData1 = res.filter((el) => el.email === loginData.email);
-        if (loData1.length === 1) {
-          setisAuth(true);
-          setAuthData(loData1);
-        } else {
-          setinCorrect(true);
-        }
-      })
 
-      .catch((err) => console.log(err))
-      .finally(() => setLoading(false))
-      .finally(() => {
-        if (isAuth === true) {
-          onClose();
-        }
-      });
-  };
+  const getData=(body)=>{
+    console.log(body)
+    let {email,password}=body;
+
+    let send_data={
+     email,password
+    }
+
+    fetch(`https://silly-tank-top-eel.cyclic.app/user/login`, {
+               method: "POST",
+               body: JSON.stringify(send_data),
+               headers: {
+                 "Content-Type": "application/json",
+               },
+             })
+               .then((r)=>r.json())
+               .then((res) => {
+                   console.log(res);
+                   if(res.status=="login successful"){
+                    localStorage.setItem("name",JSON.stringify(res.name));
+                    localStorage.setItem("token",JSON.stringify(res.token));
+                    dispatch(addName(res.name))
+                    // addName()
+                    onClose();
+                    alert("Congratulations...Login Succesfull...!!!")
+                     navigate("/")
+                   }
+               }).catch((e)=>{
+                 console.log(e)
+               })
+
+ }
+
+
+  // const getData = () => {
+  //   setLoading(true);
+  //   fetch(`https://silly-tank-top-eel.cyclic.app/user/login`)
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       loData1 = res.filter((el) => el.email === loginData.email);
+  //       if (loData1.length === 1) {
+  //         setisAuth(true);
+  //         setAuthData(loData1);
+  //       } else {
+  //         setinCorrect(true);
+  //       }
+  //     })
+
+  //     .catch((err) => console.log(err))
+  //     .finally(() => setLoading(false))
+  //     .finally(() => {
+  //       if (isAuth === true) {
+  //         onClose();
+  //       }
+  //     });
+  // };
 
   const handlesign = () => {
     setpass(true);
@@ -116,7 +159,28 @@ const Login = (props) => {
               >
                 Sign In
               </Heading>
-
+              <Input
+                    type={"email"}
+                    name="email"
+                    placeholder="Enter E-mail"
+                    mb="2%"
+                    h={"50px"}
+                    fontSize="16px"
+                    focusBorderColor="rgb(206, 206, 223)"
+                    borderColor={"rgb(206, 206, 223)"}
+                    onChange={handlechange}
+                  />
+                  <Input
+                    type={"password"}
+                    name="password"
+                    placeholder="Enter password"
+                    h={"50px"}
+                    fontSize="16px"
+                    focusBorderColor="rgb(206, 206, 223)"
+                    borderColor={"rgb(206, 206, 223)"}
+                    onChange={handlechange}
+                  />
+{/* 
               {pass === false ? (
                 <Input
                   name="email"
@@ -173,7 +237,7 @@ const Login = (props) => {
                     ""
                   )}
                 </Box>
-              )}
+              )} */}
               {loginData.email.includes("@gmail.") ? "" : butn}
 
               <HStack fontSize="16px">

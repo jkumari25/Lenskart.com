@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react'
-<<<<<<< HEAD
 import ProductCard from '../../Components/ProductCard/ProductCard'
-=======
->>>>>>> main
 import style from "./ProductList.module.css"
 import { Switch, Stack, Box, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
 import { BiSortUp } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux"
 import { getData } from '../../Redux/ProductReducer/Product.action';
 import { useLocation, useSearchParams } from "react-router-dom"
-import ProductCard from '../../Components/ProductCard/ProductCard';
+
 
 const ProductList = () => {
 

@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {Text,Image,Box, HStack,Avatar, Heading, Flex,} from '@chakra-ui/react';
 import Styles from './TopNav.module.css'
 import Hover from './Hover'
+import { useSelector } from 'react-redux'
 // import Login from '../Login'
 // import Signup from '../Signup'
 import {
@@ -35,13 +36,22 @@ import {
   import { FiMenu } from "react-icons/fi";
  
 import { AuthContext } from '../../ContextApi/AuthContext';
+import Login from '../../Pages/Login/Login';
+import Signup from '../../Pages/Signup/Signup';
 const TopNav = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const firstField = React.useRef()
   
     const {isAuth,Authdata}=useContext(AuthContext)
 
-
+    let name=JSON.parse(localStorage.getItem("name"));
+   
+    let [uName,setUname]=useState("");
+    let n = useSelector((store)=>store.AuthReducer.name)
+    console.log(name,uName,n);
+       useEffect(()=>{
+        setUname(name)
+       },[name,n])
 
     return(
 
@@ -117,8 +127,12 @@ const TopNav = () => {
                 </Box>
                 }
 
-                <Link to="/login" fontWeight={"400"} fontSize="13px" ml="5px">Sign In</Link>
-                <Link to="/signup"  fontWeight={"400"} fontSize="13px" ml="10px">Sign Up</Link>
+                {name?<Text>{name}</Text>:<Box><Login></Login>
+                <Signup></Signup></Box>}
+                 
+                
+                {/* <Link to="/login" fontWeight={"400"} fontSize="13px" ml="5px">Sign In</Link>
+                <Link to="/signup"  fontWeight={"400"} fontSize="13px" ml="10px">Sign Up</Link> */}
             </Flex>
                             </Box>
                             <Box display="flex" cursor="pointer">

@@ -1,3 +1,4 @@
+
 import React from "react";
 
 import {
@@ -24,10 +25,11 @@ import {
 import { useState } from "react";
 import Required from "./Required";
 import { useEffect } from "react";
-
+import { AuthContext } from "../../ContextApi/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  const here = {
+  const init = {
     first_name: "",
     last_name: "",
     ph_no: "",
@@ -35,13 +37,13 @@ const Signup = () => {
     password: "",
   };
 
-  const [userData, setUserData] = useState(here);
+  const [userData, setUserData] = useState(init);
   const [first, setFirst] = useState();
   const [ph, setPh] = useState();
   const [mail, setMail] = useState();
   const [pass, setPass] = useState();
   const [loading, setLoading] = useState(false);
-  
+  const navigate=useNavigate();
   const [Auth, setAuth] = useState();
   const [exist, setExist] = useState(false);
   var flag = false;
@@ -73,7 +75,7 @@ const Signup = () => {
           value === "" ? (
             <Required info="This is required" />
           ) : (
-            <Required info="Please enter a valid email address e.g. safwan12@domain.com." />
+            <Required info="Please enter a valid email address e.g. saf24@domain.com." />
           )
         );
 
@@ -84,7 +86,7 @@ const Signup = () => {
           value === "" ? (
             <Required info="This is required" />
           ) : (
-            <Required info="Password should be more than 7 characters." />
+            <Required info="Password should be more than 6 characters." />
           )
         );
 
@@ -96,41 +98,69 @@ const Signup = () => {
   };
   useEffect(() => {}, []);
 
-  const getData = (body) => {
-    setLoading(true);
-    fetch(`https://silly-tank-top-eel.cyclic.app/user/signup`)
-      .then((res) => res.json())
-      .then((res) => {
-        res.map((el) => {
-          if (el.email === body.email) {
-            flag = true;
-            return el;
-          }
-        });
-      })
-      .then(() => {
-        if (flag === false) {
-          fetch(`https://silly-tank-top-eel.cyclic.app/user/signup`, {
-            method: "POST",
-            body: JSON.stringify(body),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
-            .then((res) => res.json())
-            .then((res) => {
-              setAuth(true);
-              console.log(Auth);
-            })
-            .catch((err) => setAuth(false))
-            .finally(() => setLoading(false))
-            .finally(() => onClose());
-        } else {
-          setLoading(false);
-          setExist(true);
-        }
-      });
-  };
+  const getData=(body)=>{
+     console.log(body)
+     let {first_name:name,email,password}=body;
+
+     let send_data={
+      name,email,password
+     }
+
+     fetch(`https://silly-tank-top-eel.cyclic.app/user/signup`, {
+                method: "POST",
+                body: JSON.stringify(send_data),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              })
+                // .then((res) => res.json())
+                .then((res) => {
+                    console.log(res.status);
+                    if(res.status==200){
+                      alert("Signup Succesfull...")
+                      navigate("/login")
+                    }
+                }).catch((e)=>{
+                  console.log(e)
+                })
+
+  }
+
+  // const getData = (body) => {
+  //   setLoading(true);
+  //   fetch(`https://silly-tank-top-eel.cyclic.app/user/signup`)
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       res.map((el) => {
+  //         if (el.email === body.email) {
+  //           flag = true;
+  //           return el;
+  //         }
+  //       });
+  //     })
+  //     .then(() => {
+  //       if (flag === false) {
+  //         fetch(`https://silly-tank-top-eel.cyclic.app/user/signup`, {
+  //           method: "POST",
+  //           body: JSON.stringify(body),
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //         })
+  //           .then((res) => res.json())
+  //           .then((res) => {
+  //             setAuth(true);
+  //             console.log(Auth);
+  //           })
+  //           .catch((err) => setAuth(false))
+  //           .finally(() => setLoading(false))
+  //           .finally(() => onClose());
+  //       } else {
+  //         setLoading(false);
+  //         setExist(true);
+  //       }
+  //     });
+  // };
   const handleRegister = () => {
     getData(userData);
   };
@@ -217,7 +247,7 @@ const Signup = () => {
                 borderColor={"rgb(206, 206, 223)"}
                 m={"8px 0px 8px 0px"}
               />
-              {userData.password.length >= 7 ? "" : pass}
+              {userData.password.length >= 6 ? "" : pass}
               <HStack>
                 <Box
                   textDecoration={"underline"}
@@ -246,7 +276,7 @@ const Signup = () => {
                   h="22px"
                 />
               </HStack>
-              {exist === true ? <Required info="EmailId already exists please enter new email Adress" /> : ""}
+              {exist === true ? <Required info="EmailId already exists" /> : ""}
               <HStack spacing={"3px"} mb="10px">
                 <Box
                   fontSize={"14px"}
@@ -262,7 +292,7 @@ const Signup = () => {
               </HStack>
 
               {userData.email.includes("@gmail.") &&
-              userData.password.length >= 7 &&
+              userData.password.length >= 6 &&
               userData.ph_no.length == 10 ? (
                 <Button
                   isLoading={loading}

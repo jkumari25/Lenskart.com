@@ -14,7 +14,7 @@ const { OrderRouter } = require("./routes/order.routes");
 const App = express();
 App.use(express.json());
 
-App.use(cors());
+App.use(cors({origin: "*"}));
 
 App.get("/", (req, res) => {
     res.send("You are Welcome ");
