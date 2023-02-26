@@ -1,10 +1,24 @@
-import { Box, Button, Input, useToast } from "@chakra-ui/react";
+import { Box, Button, Image, Input, useToast } from "@chakra-ui/react";
 import React, { useState } from "react";
+import {TbCircle1, TbCircle2, TbCircle3} from "react-icons/tb";
+import { useNavigate } from 'react-router-dom';
+import "./Address.css";
 
 function Form() {
   const [formData, setFormData] = useState({firstName: "", lastName: "", city: "", address: "", pinCode: "", country: ""});
   const [formErrors, setFormErrors] = useState({firstName: "", lastName: "", city: "", address: "", pinCode: "", country: ""});
   const toast = useToast();
+  const navigate = useNavigate();
+
+  const handleMobile = ()=>{
+    navigate("/checkout");
+  }
+  const handleAddress = ()=>{
+      navigate("/address");
+  }
+  const handlePayClick = ()=>{
+      navigate("/payment");
+  }
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -39,7 +53,20 @@ function Form() {
   };
   
   return (
-    <form onSubmit={handleSubmit} style={{width:"50%", margin:"auto", marginTop:"30px",padding:"20px", border:"1px solid red", textAlign:"start", fontWeight:"bold"}}>
+    <>
+    <Box bg='#363636' w='100%' p={2} color='white' display="flex" justifyContent="center" alignItems="center">
+      <Box w="12%" cursor={"pointer"}>
+          <Image src="" w="100%"/>
+      </Box>
+    </Box>
+    <Box style={{flex:"7"}}>
+      <Box id="clip">
+          <span onClick={handleMobile}><TbCircle1 fontSize="25px"/>Enter Mobile Numberd</span>
+          <span onClick={handleAddress} style={{color:"#363636", backgroundColor:"rgb(242, 245, 248)"}}><TbCircle2 fontSize="25px"/> Shipping Address</span>
+          <span onClick={handlePayClick}><TbCircle3 fontSize="25px"/> Payment</span>
+      </Box>
+    </Box>
+    <form id="box" onSubmit={handleSubmit} style={{width:"50%", margin:"auto", marginTop:"50px",padding:"30px", textAlign:"start", fontWeight:"bold", color:"#061c45"}}>
         <Box p="1" mb={"10px"}>
             <label htmlFor="firstName" style={{paddingBottom:"10px"}}>First Name:</label>
             <Input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange}/>
@@ -66,6 +93,7 @@ function Form() {
         </Box>
         <Button type="submit" display={"flex"} alignItems="center" ml={"40%"} mt="1.5" pl="10" pr="10">Submit</Button>
     </form>
+    </>
     );
 }
 
