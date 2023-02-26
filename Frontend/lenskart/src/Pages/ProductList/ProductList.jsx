@@ -1,39 +1,44 @@
 import React, { useEffect } from 'react'
+<<<<<<< HEAD
 import ProductCard from '../../Components/ProductCard/ProductCard'
+=======
+>>>>>>> main
 import style from "./ProductList.module.css"
-import { Switch, Stack } from '@chakra-ui/react'
+import { Switch, Stack, Box, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
 import { BiSortUp } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux"
 import { getData } from '../../Redux/ProductReducer/Product.action';
-import { useLocation,useSearchParams } from "react-router-dom"
+import { useLocation, useSearchParams } from "react-router-dom"
+import ProductCard from '../../Components/ProductCard/ProductCard';
 
 const ProductList = () => {
 
   const dispatch = useDispatch()
-  const productsData = useSelector((store) => store.product)
-  const isLoading = useSelector((store) => store.isLoading)
-  const isError = useSelector((store) => store.isError)
+  const productsData = useSelector((store) => store.ProductReducer.product)
+  const isLoading = useSelector((store) => store.ProductReducer.isLoading)
+  const isError = useSelector((store) => store.ProductReducer.isError)
   const location = useLocation()
   const [searchParams] = useSearchParams()
 
 
   useEffect(() => {
-
+    
     const order = searchParams.get("order")
-
-    let paramObj={
+    
+    let paramObj = {
       params: {
-        size : searchParams.getAll("size"),
+        size: searchParams.getAll("size"),
         _sort: order && "product_price",
-        _order : order && order
+        _order: order && order
       }
     }
-
+    
     dispatch(getData(paramObj))
-
+    
   }, [location.search])
+  
+  // console.log(productsData)
 
-  // console.log(productsData,location)
 
   return (
     <>
@@ -77,7 +82,7 @@ const ProductList = () => {
         <div className={style.Product_Cart_Main_section_In_Product_List_File}>
 
           {productsData && productsData.length > 0 && productsData.map((el) => {
-           return  <ProductCard key={el.id} data={el} />
+            return <ProductCard key={el.id} data={el} />
           })}
         </div>
       </div>

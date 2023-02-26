@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import {Text,Image,Box, HStack,Link,Avatar, Heading, Flex,} from '@chakra-ui/react';
+import {Text,Image,Box, HStack,Avatar, Heading, Flex,} from '@chakra-ui/react';
 import Styles from './TopNav.module.css'
 import Hover from './Hover'
 // import Login from '../Login'
@@ -15,6 +15,8 @@ import {
 
 // import {Navigate} from "react-router-dom"
 import {TriangleDownIcon} from "@chakra-ui/icons";
+import { Link } from 'react-router-dom';
+import img from "../../assets/logo.jpg"
 
 import {
     Drawer,
@@ -71,13 +73,17 @@ const TopNav = () => {
                         <Link><Text fontSize="63%" color="#000042">Engineering Blog</Text></Link>
                     </Box>
                 </Box>
+               
                 <Box display="flex" p="0% 1.5%">
+                <Link to="/">
                     <Box w="14%" cursor="pointer" ml="-1%" bg=""> 
-                    <Image w="100%" h="100%" src='https://static.lenskart.com/media/desktop/img/site-images/main_logo.svg' alt='Lenskart' />
+                    <Image w="100%" h="100%" src={img} alt='Lenskart' />
                     </Box>
+                    </Link>
                     <Box width="10%" ml="5%" bg="">
                         <Image h="100%" width="100%"  src="https://static.lenskart.com/media/mobile/images/phone_number.svg" alt="ph-no"></Image>
                     </Box>
+                   
                     <Box p="0.6%" bg="" w="55%" ml="1%">
                         <Box border="1px" h="100%"  w="100%" borderRadius="5px" borderColor="#000042" bg="#FFFFFF">
                             <Text color="grey" ml="2%" mt="0.3%">What are you looking for</Text>
@@ -106,23 +112,25 @@ const TopNav = () => {
             </Popover>
               
               :
-              <Box display={"flex"}>
+              <Box display={"flex"} >
                 
                 </Box>
                 }
-                <Link to="/login" fontWeight={"400"} fontSize="13px">Sign In</Link>
-                <Link to="/signup"  fontWeight={"400"} fontSize="13px">Sign Up</Link>
+
+                <Link to="/login" fontWeight={"400"} fontSize="13px" ml="5px">Sign In</Link>
+                <Link to="/signup"  fontWeight={"400"} fontSize="13px" ml="10px">Sign Up</Link>
             </Flex>
                             </Box>
                             <Box display="flex" cursor="pointer">
                                 <Image h="75%" src="https://static.lenskart.com/media/desktop/img/wishlist.png" alt="icon"></Image>
                                 <Text ml="15%">Wishlist</Text>
                             </Box>
-
+                            <Link to="/cart">
                             <Box display="flex" cursor="pointer">
                                 <Image h="65%" src="https://static.lenskart.com/media/desktop/img/cart.png" alt="icon"></Image>
                                 <Text ml="15%" >Cart</Text>
                             </Box>
+                            </Link>
                         </Box>
                     </Box>
                 </Box>
