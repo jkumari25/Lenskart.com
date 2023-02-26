@@ -126,41 +126,7 @@ const Signup = () => {
 
   }
 
-  // const getData = (body) => {
-  //   setLoading(true);
-  //   fetch(`https://silly-tank-top-eel.cyclic.app/user/signup`)
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       res.map((el) => {
-  //         if (el.email === body.email) {
-  //           flag = true;
-  //           return el;
-  //         }
-  //       });
-  //     })
-  //     .then(() => {
-  //       if (flag === false) {
-  //         fetch(`https://silly-tank-top-eel.cyclic.app/user/signup`, {
-  //           method: "POST",
-  //           body: JSON.stringify(body),
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //         })
-  //           .then((res) => res.json())
-  //           .then((res) => {
-  //             setAuth(true);
-  //             console.log(Auth);
-  //           })
-  //           .catch((err) => setAuth(false))
-  //           .finally(() => setLoading(false))
-  //           .finally(() => onClose());
-  //       } else {
-  //         setLoading(false);
-  //         setExist(true);
-  //       }
-  //     });
-  // };
+
   const handleRegister = () => {
     getData(userData);
   };

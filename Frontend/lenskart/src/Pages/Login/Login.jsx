@@ -109,11 +109,7 @@ const Login = (props) => {
   //       }
   //     })
 
-  //     .catch((err) => console.log(err))
-  //     .finally(() => setLoading(false))
-  //     .finally(() => {
-  //       if (isAuth === true) {
-  //         onClose();
+  
   //       }
   //     });
   // };
