@@ -1,81 +1,48 @@
-import React, { useEffect } from 'react';
 import { Box, Center, Divider, Flex, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { getData } from '../../Redux/CartRedux/CartAction';
-import { CircularProgress } from "react-loading-indicators";
+import { Link, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import CartCard from "./CartCard";
+import { useDispatch, useSelector } from "react-redux";
 import { FaAngleRight } from "react-icons/fa";
 import CartNull from "./CartNull";
-import CartCard from './CartCard';
-import TopNav from '../../Componets/Navbar/TopNav';
-import Footer from '../../Componets/Footer/Footer';
-
-const CartItem = () => {
-  
-  const dispatch = useDispatch()
-  const ProductData = useSelector((store)=> store.CartReducer.data)
-  const loadingData = useSelector((store)=> store.CartReducer.isLoading);
-  // const updateQuantity = (id, payload) => {
-  //   updateData(dispatch, id, payload).then(() => getData(dispatch));
-  // };
-  // const removeItem = (id) => {
-  //   removeData(dispatch, id).then(() => getData(dispatch));
-  //   // getData(dispatch);
-  // };
-
-  useEffect(()=>{
-    dispatch(getData)
-  },[])
-
+import { getCartData, removeCartData, updateCartData } from "../../Redux/CartRedux/CartAction";
+import axios from "axios";
+const Cart = () => {
+  const { data, loading } = useSelector((store) => store.CartReducer);
+  const [cart,setCart] = useState([]);
+  const dispatch = useDispatch();
+  const updateQuantity = (id, payload) => {
+      updateCartData(dispatch, id, payload).then(() => getCartData(dispatch));
+    };
+  const removeCartItem = (id) => {
+      removeCartData(dispatch, id).then(() => getCartData(dispatch)); 
+      // getCartData(dispatch);
+  };
+  const { id } = useParams();
+  const getSingleCart = (id) => {
+    let res = axios.get(`https://optic-data.vercel.app/all_Eyeglasses/${id}`);
+    return res;
+  }
+  useEffect(() => {
+    getCartData(dispatch);
+    let SingleData = getSingleCart(id).then((el)=>setCart(el.data))
+  }, []);
   let total = 0;
   let tax = 420;
   let item = 0;
-  for (let i = 0; i < ProductData.length; i++) {
-    total += +ProductData[i].product_price;
+  for (let i = 0; i < data.length; i++) {
+    total += +data[i].product_price * +data[i].quantity;
+    item += +data[i].quantity;
   }
-  let discountPrice = total - 1000;
-  let finalPrice = discountPrice + tax;
+  let finalPrice = total + tax;
 
-  // console.log(ProductData,finalPrice);
-  // console.log(loadingData);
-  if (loadingData) {
-    return (
-      <>
-        <Center>
-          <CircularProgress className="spinner"/>
-        </Center>
-      </>
-    );
-  }
-  if (ProductData.length === 0) {
+  if (cart.length === 0) {
     return <CartNull />;
   }
-
   return (
-    <>
-    <TopNav />
-     <Box>
-      <Flex
-        w="80%"
-        m="0px auto"
-        h="auto"
-        justifyContent={"space-between"}
-        display={{ base: "row", lg: "flex" }}
-      >
+    <Box>
+      <Flex w="80%" m="0px auto" h="auto" justifyContent={"space-between"} display={{ base: "row", lg: "flex" }}>
         {/* <CartCard /> */}
-        <Box>
-          <Text>
-            Cart(<span>{ProductData.length  }</span>  items)
-          </Text>
-          {ProductData?.map((el) => (
-            <CartCard
-              key={el.id}
-              {...el}
-              // updateQuantity={updateQuantity}
-              // removeItem={removeItem}
-            />
-          ))}
-        </Box>
         <Box>
           <Box border={"1px solid black"} borderRadius="20px" padding="30px">
             <Text>Bill Details</Text>
@@ -84,7 +51,7 @@ const CartItem = () => {
                 <Text>Total Price</Text>
                 <Text>{total}</Text>
               </Flex>{" "}
-              <Flex justifyContent={"space-between"} w="300px" mt="5px"> 
+              <Flex justifyContent={"space-between"} w="300px" mt="5px">
                 <Text>Total Offer Discount</Text>
                 <Text>000</Text>
               </Flex>{" "}
@@ -92,9 +59,14 @@ const CartItem = () => {
                 <Text>Final Price</Text>
                 <Text>{total}</Text>
               </Flex>{" "}
+              <Divider borderBottom={"1px dashed"} />
+              <Flex justifyContent={"space-between"} w="300px" mt="5px">
+                <Text>Gold Membership Discount</Text>
+                <Text>000</Text>
+              </Flex>{" "}
               <Flex justifyContent={"space-between"} w="300px" mt="5px">
                 <Text>Total After Discount</Text>
-                <Text>{discountPrice}</Text>
+                <Text>{total}</Text>
               </Flex>{" "}
               <Divider borderBottom={"1px dashed"} />
               <Flex justifyContent={"space-between"} w="300px" mt="5px">
@@ -115,7 +87,7 @@ const CartItem = () => {
           >
             <Flex justifyContent={"space-between"} alignItems="center">
               <Box>
-                <Text>Apply Coupon</Text>
+                <Text>Apply Coupan</Text>
                 <Text>Check available offers</Text>
               </Box>
               <Box>
@@ -133,9 +105,7 @@ const CartItem = () => {
         </Box>
       </Flex>
     </Box>
-    <Footer />
-    </>
-  )
-}
+  );
+};
 
-export default CartItem
+export default Cart;

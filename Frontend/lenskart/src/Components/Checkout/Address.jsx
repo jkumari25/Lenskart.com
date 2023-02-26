@@ -1,10 +1,30 @@
-import { Box, Button, Input, useToast } from "@chakra-ui/react";
+import { Box, Button, Image, Input, Text, useToast } from "@chakra-ui/react";
 import React, { useState } from "react";
+import {TbCircle1, TbCircle2, TbCircle3} from "react-icons/tb";
+import { useNavigate } from 'react-router-dom';
+import "./Address.css";
 
 function Form() {
-  const [formData, setFormData] = useState({firstName: "", lastName: "", city: "", address: "", pinCode: "", country: ""});
-  const [formErrors, setFormErrors] = useState({firstName: "", lastName: "", city: "", address: "", pinCode: "", country: ""});
+  // const [first_name,setFirstName]= useState("");
+  // const [last_name,setLastName]= useState("");
+  // const [city,setCity]= useState("");
+  // const [pincode,setPincode]= useState(null);
+  // const [address,setAddress]= useState("");
+  // const [country,setCountry]= useState("");
+  const [formData, setFormData] = useState({first_name: "", last_name: "", city: "", address: "", pinCode: "", country: ""});
+  const [formErrors, setFormErrors] = useState({first_name: "", last_name: "", city: "", address: "", pinCode: "", country: ""});
   const toast = useToast();
+  const navigate = useNavigate();
+
+  const handleMobile = ()=>{
+    navigate("/checkout");
+  }
+  const handleAddress = ()=>{
+      navigate("/address");
+  }
+  const handlePayClick = ()=>{
+      navigate("/payment");
+  }
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -16,56 +36,41 @@ function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // const payload={
+    //   first_name,
+    //   last_name,
+    //   city,
+    //   address,
+    //   pincode,
+    //   country
+    // }
+    fetch("https://calm-gold-hatchling-robe.cyclic.app/order/add",{
+      method:"POST",
+      body:JSON.stringify(formData),
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization": localStorage.getItem("token"),
+      }
+    }).then(res => res.json())
+       .then(res=> console.log(res))
+       .catch(err => console.log(err));
+       navigate("/payment");
+
     const errors = validate(formData);
-    if (Object.keys(errors).length > 0) {
+    if (Object.keys(errors).length > 0) { 
       setFormErrors(errors);
     } else {
         console.log(formData,formErrors)
-      setFormData({firstName: "", lastName: "", city: "", address: "", pinCode: "", country: ""});
-      setFormErrors({firstName: "", lastName: "", city: "", address: "", pinCode: "", country: "" });
+      setFormData({first_name: "", last_name: "", city: "", address: "", pinCode: "", country: ""});
+      setFormErrors({first_name: "", last_name: "", city: "", address: "", pinCode: "", country: "" });
     }
   };
 
   const validate = (formData) => {
     const errors = {};
-    if (!formData.firstName) {
+    if (!formData.first_name || !formData.last_name || !formData.city || !formData.address || !formData.pinCode || !formData.country) {
       errors.firstName = toast({
-        title: `Enter First Name`,
-        status: 'warning',
-        isClosable: true,
-    });
-    }
-    if (!formData.lastName) {
-      errors.lastName = toast({
-        title: `Enter Last Name`,
-        status: 'warning',
-        isClosable: true,
-    });
-    }
-    if (!formData.city) {
-      errors.city = toast({
-        title: `Enter City Name`,
-        status: 'warning',
-        isClosable: true,
-    });
-    }
-    if (!formData.address) {
-      errors.address = toast({
-        title: `Enter Address`,
-        status: 'warning',
-        isClosable: true,
-    });
-    }
-    if (!formData.pinCode) {
-      errors.pinCode = toast({
-        title: `Enter Pin Code`,
-        status: 'warning',
-        isClosable: true,
-    });
-    }
-    if (!formData.country) {
-      errors.country = toast({
-        title: `Enter Country`,
+        title: `Enter All Details`,
         status: 'warning',
         isClosable: true,
     });
@@ -74,14 +79,30 @@ function Form() {
   };
   
   return (
-    <form onSubmit={handleSubmit} style={{width:"50%", margin:"auto", marginTop:"30px",padding:"20px", border:"1px solid red", textAlign:"start", fontWeight:"bold"}}>
+    <>
+    <Box bg='#363636' w='100%' p={2} color='white' display="flex" justifyContent="center" alignItems="center">
+      <Box w="12%" cursor={"pointer"}>
+          <Image src="" w="100%"/>
+      </Box>
+    </Box>
+    <Box style={{flex:"7"}}>
+      <Box id="clip">
+          <span onClick={handleMobile}><TbCircle1 fontSize="25px"/>Enter Mobile Number</span>
+          <span onClick={handleAddress} style={{color:"#363636", backgroundColor:"rgb(242, 245, 248)"}}><TbCircle2 fontSize="25px"/> Shipping Address</span>
+          <span onClick={handlePayClick}><TbCircle3 fontSize="25px"/> Payment</span>
+      </Box>
+    </Box>
+    <Box bg="#329c92" padding="7px" display={"flex"} alignItems="center" justifyContent={"center"} w="50%" margin={"auto"} mt="30px">
+      <Text color="white" fontSize="20px">DELIVERY ADDRESS</Text>
+    </Box>
+    <form id="box" onSubmit={handleSubmit} style={{width:"50%", margin:"auto", marginTop:"20px",padding:"30px", textAlign:"start", fontWeight:"bold", color:"#061c45"}}>
         <Box p="1" mb={"10px"}>
-            <label htmlFor="firstName" style={{paddingBottom:"10px"}}>First Name:</label>
-            <Input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange}/>
+            <label htmlFor="first_name" style={{paddingBottom:"10px"}}>First Name:</label>
+            <Input type="text" id="first_name" name="first_name" value={formData.first_name} onChange={handleInputChange}/>
         </Box>
         <Box p="1" mb={"10px"}>
-            <label htmlFor="lastName">Last Name:</label>
-            <Input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleInputChange}/>
+            <label htmlFor="last_name">Last Name:</label>
+            <Input type="text" id="last_name" name="last_name" value={formData.last_name} onChange={handleInputChange}/>
         </Box>
         <Box p="1" mb={"10px"}>
             <label htmlFor="city">City:</label>
@@ -101,6 +122,7 @@ function Form() {
         </Box>
         <Button type="submit" display={"flex"} alignItems="center" ml={"40%"} mt="1.5" pl="10" pr="10">Submit</Button>
     </form>
+    </>
     );
 }
 

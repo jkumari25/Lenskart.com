@@ -44,7 +44,7 @@ const AdminAddProduct = () => {
       })
         .then((res) => {
           toast({
-            position: "bottom-left",
+            position:"top",
             title: "Product Added SuccessFully ",
             description: "SuccessFul.",
             status: "success",

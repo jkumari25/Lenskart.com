@@ -42,7 +42,7 @@ const Order = () => {
     },[])
 
     const getUser = async()=>{
-      const res = await axios.get("https://real-puce-slug-boot.cyclic.app/order")
+      const res = await axios.get("https://silly-tank-top-eel.cyclic.app/order")
       setData(res.data)
     }
     console.log(data.data)

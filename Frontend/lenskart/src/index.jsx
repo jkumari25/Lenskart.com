@@ -7,17 +7,20 @@ import { BrowserRouter } from "react-router-dom";
 import AuthProvider from "./ContextApi/AuthContext";
 import { Provider } from "react-redux";
 import { store } from "./Redux/store";
+import { CartItemProvider } from "./Components/Cart/CartContext/CartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <AuthProvider>
-  <ChakraProvider>
-    <BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>
-    </BrowserRouter>
-  </ChakraProvider>
+    <CartItemProvider>
+      <ChakraProvider>
+        <BrowserRouter>
+        <Provider store={store}>
+          <App />
+        </Provider>
+        </BrowserRouter>
+      </ChakraProvider>
+    </CartItemProvider>
   </AuthProvider>
 );
 

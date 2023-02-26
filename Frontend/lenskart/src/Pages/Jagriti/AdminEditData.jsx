@@ -4,16 +4,17 @@ import { useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 
 const AdminEditData = () => {
-  const [productid,setProductid]= useState("");
+  // const [productid,setProductid]= useState("");
   const [product_name,setProductName]= useState("");
   const [product_image,setProductImage]= useState("");
   const [product_price,setProductPrice]= useState(null);
   const [strike_through,setStrikeThrough]= useState(null);
   const [size,setSize]= useState(null);
   const [category,setCategory]= useState("");
-  const [product,setProduct]= useState([]);
+  const [data,setData]= useState([]);
+  console.log(data);
 
-    const {id}=useParams()
+    const {_id}=useParams()
     const toast = useToast()
     const navigate=useNavigate()
     const handleLogout=()=>
@@ -23,12 +24,12 @@ const AdminEditData = () => {
     }
  
     useEffect(() => {
-      fetch("https://silly-tank-top-eel.cyclic.app/product" + id).then((res) => {
+      fetch("https://silly-tank-top-eel.cyclic.app/product/" + _id).then((res) => {
           return res.json();
       }).
       then((res) => {
-          setProduct(res[0]);
-          setProductid(res.productid);
+          setData(res[0]);
+          // setProductid(res.productid);
           setProductName(res.product_name);
           setProductPrice(res.product_price);
           setStrikeThrough(res.strike_through);
@@ -43,16 +44,23 @@ const AdminEditData = () => {
    
     const handleUpdate=()=> {
      
-      const prodata={productid,product_name,product_price,strike_through,product_image,category,size};
+      const prodata={
+        product_name,
+        product_price,
+        strike_through,
+        product_image,
+        category,
+        size
+      };
       
-      fetch("https://silly-tank-top-eel.cyclic.app/product/update"+ id,{
+      fetch('https://silly-tank-top-eel.cyclic.app/product/update/' +_id,{
         method:"PATCH",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(prodata)
       })
       .then((res)=>{
         toast({
-          position: "bottom-left",
+          position:"bottom-left",
           title: "Product Updated SuccessFully ",
           description: "SuccessFul.",
           status: "success",

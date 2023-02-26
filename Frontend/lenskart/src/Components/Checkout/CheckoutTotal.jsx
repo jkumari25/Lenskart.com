@@ -9,7 +9,7 @@ const CheckoutTotal = () => {
 
   const handleData = async () => {
     let res = await axios.get(
-      "http://localhost:8080/all_Eyeglasses"
+      "http://localhost:8080/all_Eyeglasses?_limit=4"
     );
     let val = await res.data;
     setData(val);

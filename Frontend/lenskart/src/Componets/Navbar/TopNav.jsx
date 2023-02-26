@@ -35,7 +35,10 @@ import {
 import { FiMenu } from "react-icons/fi";
 
 import { AuthContext } from '../../ContextApi/AuthContext';
+import Login from '../../Pages/Login/Login';
+import Signup from '../../Pages/Signup/Signup';
 const TopNav = () => {
+
   const { isOpen, onOpen, onClose } = useDisclosure()
   const firstField = React.useRef()
 
@@ -126,6 +129,104 @@ const TopNav = () => {
                 <Box display="flex" cursor="pointer">
                   <Image h="75%" src="https://static.lenskart.com/media/desktop/img/wishlist.png" alt="icon"></Image>
                   <Text ml="15%">Wishlist</Text>
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const firstField = React.useRef()
+  
+    const {isAuth,Authdata}=useContext(AuthContext)
+
+
+
+    return(
+
+        <div className={Styles.tn_div_1} style={{width:'100%'}}>
+            <div className={Styles.tn_div_2} style={{width:'100%'}}>
+            <Box bg="#FFFFFF" mt="0.5%">
+                <Box bg="" pb="0.5%" mb="0.5%">
+                    <Box display="flex" fontFamily="sans-serif"  ml="0.3%" bg="">
+                        <Link> <Text fontSize="70%" color="#000042">Do More, Be More</Text></Link>
+                        <Text fontSize="100%" mt="-0.8%" p="0.4%">|</Text>
+                        <Link to=""><Text fontSize="63%" color="#000042" p="">Try in 3D</Text></Link>
+                        <Text fontSize="100%" mt="-0.8%" p="0.4%">|</Text>
+                        <Link><Text fontSize="63%" color="#000042">Store Location</Text></Link>
+                        <Text fontSize="100%" mt="-0.8%" p="0.4%">|</Text>
+                        <Link> <Text fontSize="63%" color="#000042">Quality</Text></Link>
+                        <Text fontSize="100%" mt="-0.8%" p="0.4%">|</Text>
+                        <Link><Text fontSize="63%" color="#000042">USA</Text></Link>
+                        <Text fontSize="100%" mt="-0.8%" p="0.4%">|</Text>
+                        <Link><Text fontSize="63%" color="#000042">Singapore</Text></Link>
+                        <Text fontSize="100%" mt="-0.8%" p="0.4%">|</Text>
+                        <Link><Text fontSize="63%" color="#000042">UAE</Text></Link>
+                        <Text fontSize="100%" mt="-0.8%" p="0.4%">|</Text>
+                        <Link><Text fontSize="63%" color="#000042">John Jacobs</Text></Link>
+                        <Text fontSize="100%" mt="-0.8%" p="0.4%">|</Text>
+                        <Link><Text fontSize="63%" color="#000042">Aqualens</Text></Link>
+                        <Text fontSize="100%" mt="-0.8%" p="0.4%">|</Text>
+                        <Link><Text fontSize="63%" color="#000042">Cobrowsing</Text></Link>
+                        <Text fontSize="100%" mt="-0.8%" p="0.4%">|</Text>
+                        <Link><Text fontSize="63%" color="#000042">Engineering Blog</Text></Link>
+                    </Box>
+                </Box>
+               
+                <Box display="flex" p="0% 1.5%" >
+                <Link to="/">
+                    <Box w="14%" cursor="pointer" ml="-1%" bg=""> 
+                    <Image w="100%" h="100%" src={img} alt='Lenskart' />
+                    </Box>
+                    </Link>
+                    <Box width="10%" ml="5%" >
+                        <Image h="100%" width="100%"  src="https://static.lenskart.com/media/mobile/images/phone_number.svg" alt="ph-no"></Image>
+                    </Box>
+                   
+                    <Box p="0.6%" bg="" w="55%" ml="1%">
+                        <Box border="1px" h="100%"  w="100%" borderRadius="5px" borderColor="#000042" bg="#FFFFFF">
+                            <Text color="grey" ml="2%" mt="0.3%">What are you looking for</Text>
+                        </Box>
+                    </Box>
+                    <Box  fontSize="13px" fontFamily="sans-serif" w="30%" ml="5%">
+                        <Box pt="5%" display="flex" justifyContent="space-between" color={'black'}>                      
+                            Track order
+                            
+                            <Box  display="flex">
+                            <Flex>
+              {isAuth===true?
+              <Popover trigger="hover">
+              <PopoverTrigger>
+                <Box fontWeight={"400"} fontSize="13px" mt="-2px" >{Authdata[0].first_name}<TriangleDownIcon ml="2px" fontSize={"9px"} _hover={{transform: "rotate(180deg)"}}/> </Box>
+              </PopoverTrigger>
+              <PopoverContent w="200px" boxShadow={"rgba(0, 0, 0, 0.24) 0px 3px 8px"}>
+                
+               
+              
+                <PopoverBody display={"flex"} flexDirection="column" h={"160px"} justifyContent="space-between" >
+               
+                
+            </PopoverBody>
+              </PopoverContent>
+            </Popover>
+              
+              :
+              <Box display={"flex"} >
+                
+                </Box>
+                }
+
+                <Link fontWeight={"400"} fontSize="13px" ml="5px"><Login /></Link>
+                <Link fontWeight={"400"} fontSize="13px" ml="10px"><Signup /></Link>
+            </Flex>
+                            </Box>
+                            {/* <Box display="flex" cursor="pointer">
+                                <Image h="75%" src="https://static.lenskart.com/media/desktop/img/wishlist.png" alt="icon"></Image>
+                                <Text ml="15%">Wishlist</Text>
+                            </Box> */}
+                            <Link to="/cart">
+                            <Box display="flex" cursor="pointer">
+                                <Image h="65%" src="https://static.lenskart.com/media/desktop/img/cart.png" alt="icon"></Image>
+                                <Text ml="15%" >Cart</Text>
+                            </Box>
+                            </Link>
+                        </Box>
+                    </Box>
+
                 </Box>
                 <Link to="/cart">
                   <Box display="flex" cursor="pointer">
