@@ -54,7 +54,7 @@ const Login = (props) => {
   let loData1 = [];
   const getData = () => {
     setLoading(true);
-    fetch(`https://silly-tank-top-eel.cyclic.app/user/login`)
+    fetch(`https://silly-tank-top-eel.cyclic.app/user`)
       .then((res) => res.json())
       .then((res) => {
         loData1 = res.filter((el) => el.email === loginData.email);
