@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { AiOutlineHeart } from 'react-icons/ai'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from "react-router-dom"
 import style from "./SingleProductPage.module.css"
 import {  Button,  } from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react'
 import TopNav from '../../Componets/Navbar/TopNav'
 import Footer from "../../Componets/Footer/Footer"
+import { getData } from '../../Redux/CartRedux/CartAction'
+import axios from "axios"
 
 const SingleProductPage = () => {
 
@@ -16,9 +18,10 @@ const SingleProductPage = () => {
   const isLoading = useSelector((store) => store.ProductReducer.isLoading)
   const product = useSelector((store) => store.ProductReducer.product)
   const toast = useToast()
+  const dispatch= useDispatch()
 
   const handelCart=(item)=>{
-    setSingleProduct(item)
+ 
 
     toast({
       title: 'Added To Cart.',
@@ -27,15 +30,21 @@ const SingleProductPage = () => {
       duration: 2000,
       isClosable: true,
     })
-
+    dispatch(getData(singleProduct))
   }
 
+  useEffect(()=>{
+   axios.get(`https://optic-data.vercel.app/all_Eyeglasses/${id}`)
+   .then((res)=> setSingleProduct(res.data))
+   .catch((err)=> console.log(err));
+  },[])
 
-
-  useEffect(() => {
+useEffect(() => {
     let lensData = product.find((el) => el.id === +id)
     lensData && setData(lensData)
+    
   }, [])
+
 console.log(singleProduct)
 // console.log(data+"Single")
   return (

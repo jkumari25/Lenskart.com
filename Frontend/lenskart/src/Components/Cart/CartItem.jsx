@@ -14,18 +14,16 @@ const CartItem = () => {
   
   const dispatch = useDispatch()
   const ProductData = useSelector((store)=> store.CartReducer.data)
+  
   const loadingData = useSelector((store)=> store.CartReducer.isLoading);
-  // const updateQuantity = (id, payload) => {
-  //   updateData(dispatch, id, payload).then(() => getData(dispatch));
-  // };
-  // const removeItem = (id) => {
-  //   removeData(dispatch, id).then(() => getData(dispatch));
-  //   // getData(dispatch);
-  // };
 
+  
+  
   useEffect(()=>{
     dispatch(getData)
   },[])
+
+  console.log(ProductData)
 
   let total = 0;
   let tax = 420;

@@ -13,9 +13,9 @@ const getErrAction=()=>{
     return {type:GET_CART_ERR}
 }
 
-export const getData=(dispatch)=>{
+export const getData=(params)=>(dispatch)=>{
     dispatch(getReqAction())
-    axios.get("http://localhost:8080/all_Eyeglasses")
+    axios.get("https://optic-data.vercel.app/cart",params)
     .then((res)=>{
         // console.log(res.data)
         dispatch(getSuccessAction(res.data))

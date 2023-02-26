@@ -44,7 +44,7 @@ const User = () => {
       
   
     const getUser = async()=>{
-      const res = await axios.get("")
+      const res = await axios.get("https://silly-tank-top-eel.cyclic.app/user")
       setData(res.data)
     }
 

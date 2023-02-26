@@ -1302,5 +1302,33 @@
                   "id": 100,
                   "category": "aviator"
                 }
+    ],
+    "cart":[
+      {
+        "product_image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//v/i/vincent-chase-vc-e13636-c3-eyeglasses_G_7186.jpg",
+        "rating_value": "4.6",
+        "rating_count": "69",
+        "product_name": "Vincent Chase Online",
+        "size":"Medium",
+        "tags": "Shark Tank",
+        "product_price": 1700,
+        "strike_through": "4000",
+        "product_offer": "60% OFF. Use: EYECON",
+        "id": 2,
+        "category": "eyeglasses-mix"
+      },
+      {
+        "product_image": "https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/628x301/9df78eab33525d08d6e5fb8d27136e95//j/o/john-jacobs-jj-e14008m-c3-eyeglasses_G_2506.jpg",
+        "rating_value": "4.7",
+        "rating_count": "16",
+        "product_name": "John Jacobs Online",
+        "size":"Medium",
+        "tags": "John Jacobs",
+        "product_price": 3200,
+        "strike_through": "4200",
+        "product_offer": "60% OFF. Use: EYECON",
+        "id": 3,
+        "category": "eyeglasses-mix"
+      }
     ]
     }
