@@ -1,0 +1,23 @@
+#clip {
+    margin-top: 20px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+}
+#clip span {
+    padding: 10px 22px;
+    background-color: #363636;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 10% 50%);
+  }
+
+#clip span:hover{
+    background-color: rgb(242, 245, 248);
+    color: #363636;
+    cursor: pointer;
+}
+#box{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
