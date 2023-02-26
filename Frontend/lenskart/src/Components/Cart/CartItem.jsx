@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Box, Center, Divider, Flex, Text } from "@chakra-ui/react";
+import React, { useEffect, useState } from 'react';
+import { Box, Button, Center, Divider, Flex, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getData } from '../../Redux/CartRedux/CartAction';
@@ -17,6 +17,20 @@ const CartItem = () => {
   
   const loadingData = useSelector((store)=> store.CartReducer.isLoading);
 
+
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem("cartItems")) || [];
+    setCartItems(items);
+  }, []);
+
+  const handleRemoveItem = (index) => {
+    const newCartItems = [...cartItems];
+    newCartItems.splice(index, 1);
+    setCartItems(newCartItems);
+    localStorage.setItem("cartItems", JSON.stringify(newCartItems));
+  };
   
   
   useEffect(()=>{
@@ -28,8 +42,8 @@ const CartItem = () => {
   let total = 0;
   let tax = 420;
   let item = 0;
-  for (let i = 0; i < ProductData.length; i++) {
-    total += +ProductData[i].product_price;
+  for (let i = 0; i < cartItems.length; i++) {
+    total += +cartItems[i].product_price;
   }
   let discountPrice = total - 1000;
   let finalPrice = discountPrice + tax;
@@ -45,7 +59,7 @@ const CartItem = () => {
       </>
     );
   }
-  if (ProductData.length === 0) {
+  if (cartItems.length === 0) {
     return <CartNull />;
   }
 
@@ -63,14 +77,14 @@ const CartItem = () => {
         {/* <CartCard /> */}
         <Box>
           <Text>
-            Cart(<span>{ProductData.length  }</span>  items)
+            Cart(<span>{cartItems.length  }</span>  items)
           </Text>
-          {ProductData?.map((el) => (
+          {cartItems?.map((el) => (
             <CartCard
               key={el.id}
               {...el}
               // updateQuantity={updateQuantity}
-              // removeItem={removeItem}
+              removeItem={handleRemoveItem}
             />
           ))}
         </Box>

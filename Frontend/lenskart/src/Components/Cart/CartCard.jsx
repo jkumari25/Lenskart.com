@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const CartCard = ({product_image, product_name,product_price,quantity,id}) => {
+const CartCard = ({product_image, product_name,product_price,quantity,id,removeCartItem}) => {
 	return (
 		<Box mt="20px">
 			<Card
@@ -47,19 +47,19 @@ const CartCard = ({product_image, product_name,product_price,quantity,id}) => {
 						<Text>{+product_price + 501}</Text>
 					</Flex>
 					<Divider borderBottom={"1px dashed"} />
-					{/* <ButtonGroup spacing={2}>
-						<Button onClick={() => removeCartItem(id)}>
+					<ButtonGroup spacing={2}>
+						<Button onClick={removeCartItem}>
 							Remove
 						</Button>
-						<Button>{quantity}</Button>
-						<Button
+						{/* <Button>{quantity}</Button> */}
+						{/* <Button
 							onClick={() =>
 								updateQuantity(id, { quantity: quantity + 1 })
 							}
 						>
 							Repeat
-						</Button>
-					</ButtonGroup> */}
+						</Button> */}
+					</ButtonGroup>
 				</Stack>
 			</Card>
 		</Box>
