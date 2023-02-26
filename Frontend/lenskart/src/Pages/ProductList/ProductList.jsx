@@ -1,4 +1,8 @@
 import React, { useEffect } from 'react'
+<<<<<<< HEAD
+import ProductCard from '../../Components/ProductCard/ProductCard'
+=======
+>>>>>>> main
 import style from "./ProductList.module.css"
 import { Switch, Stack, Box, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
 import { BiSortUp } from "react-icons/bi";

@@ -9,9 +9,16 @@ import CartItem from "../Components/Cart/CartItem";
 import Checkout from '../Components/Checkout/Checkout';
 import Form from '../Components/Checkout/Address';
 import Home from '../Home'
-import Kids from '../Pages/kids/Kids';
+
+import Signup from '../Pages/Signup/Signup';
+import Login from '../Pages/Login/Login';
+
+
+import Kids from "../Pages/kids/Kids";
+import Payment from "../Components/Payment/Payment";
 import SingleProductPage from '../Pages/SingleProductPage/SingleProductPage';
 import Contact_Lens from '../Pages/Contact-lens/Contact_Lens';
+
 
 const AllRoutes = () => {
   return (
@@ -25,9 +32,15 @@ const AllRoutes = () => {
     <Route path="/cart" element={<CartItem/>}/>
     <Route path="/checkout" element={<Checkout/>}/>
     <Route path="/address" element={<Form/>}/>
-    <Route path='/kids' element={<Kids/>}/>
+
+    <Route path="/signup" element={<Signup/>}/>
+    <Route path="/login" element={<Login/>}/>
+
+    <Route path="/kids" element={<Kids/>}/>
+    <Route path="/payment" element={<Payment/>}/>
     <Route path='/single/:id' element={<SingleProductPage/>}/>
     <Route path='/contact' element={<Contact_Lens/>}/>
+
    </Routes>
   )
 }
