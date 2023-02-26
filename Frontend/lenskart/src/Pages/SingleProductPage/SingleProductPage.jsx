@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { useSelector } from 'react-redux'
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import style from "./SingleProductPage.module.css"
 import {  Button,  } from '@chakra-ui/react'
 import { useToast } from '@chakra-ui/react'
@@ -29,9 +29,6 @@ const SingleProductPage = () => {
     })
 
   }
-
-
-
   useEffect(() => {
     let lensData = product.find((el) => el.id === +id)
     lensData && setData(lensData)
@@ -79,7 +76,7 @@ console.log(singleProduct)
 
           <div className={style.Single_Product_Page_Add_To_cart_Button_Main_Section}>
 
-            <Button colorScheme='messenger' width="full" onClick={() =>handelCart(data)}>Add To Cart</Button>
+           <Link to={`/cart/${data.id}`}> <Button colorScheme='messenger' width="full" onClick={() =>handelCart(data)}>Add To Cart</Button></Link>
             <Button colorScheme='pink' variant='solid' width="full">Add To Wishlist</Button>
 
           </div>

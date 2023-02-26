@@ -79,7 +79,7 @@ const Checkout = () => {
         <Box style={{display:"flex",height:"auto",width:"85%",margin:"auto"}}>
             <Box style={{flex:"7"}}>
                 <Box id="clip">
-                    <span onClick={handleMobile} style={{color:"#363636", backgroundColor:"rgb(242, 245, 248)"}}><TbCircle1 fontSize="25px"/>Enter Mobile Numberd</span>
+                    <span onClick={handleMobile} style={{color:"#363636", backgroundColor:"rgb(242, 245, 248)"}}><TbCircle1 fontSize="25px"/>Enter Mobile Number</span>
                     <span onClick={handleAddress}><TbCircle2 fontSize="25px"/> Shipping Address</span>
                     <span onClick={handlePayClick}><TbCircle3 fontSize="25px"/> Payment</span>
                 </Box>

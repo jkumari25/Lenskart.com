@@ -1,3 +1,9 @@
-export const GET_CART_REQ = "GET_CART_REQ"
-export const GET_CART_SUCCESS ="GET_CART_SUCCESS"
-export const GET_CART_ERR = "GET_CART_ERR"
+export const CART_GET_LOADING = "CART/get/loading";
+export const CART_GET_ERROR = "CART/get/error";
+export const CART_GET_SUCCESS = "CART/get/success";
+export const CART_UPDATE_LOADING = "CART/update/loading";
+export const CART_UPDATE_ERROR = "CART/update/error";
+export const CART_UPDATE_SUCCESS = "CART/update/success";
+export const CART_DELETE_LOADING = "CART/delete/loading";
+export const CART_DELETE_ERROR = "CART/delete/error";
+export const CART_DELETE_SUCCESS = "CART/delete/success";
